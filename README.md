@@ -2,6 +2,8 @@
 
 **Distribution:** Firefox Add-ons **Listed（公開上架）**，而不是 Unlisted。
 
+**GitHub Repository:** https://github.com/hilarycheng/HistoryControl
+
 本版在 v1.0.9 的功能上新增：
 - **Full Backup：** 匯出完整的 Protected URLs、No History、Host Entry 及每日清理統計。
 - **Restore Full Backup：** 從本機 JSON 還原上述資料；此操作不會執行 Clean Now。
