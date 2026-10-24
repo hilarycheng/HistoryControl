@@ -1,0 +1,369 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f6f7f9;
+  --card: #fff;
+  --text: #162136;
+  --muted: #59687a;
+  --line: #dae1e9;
+  --button: #edf1f5;
+  --brand: #107552;
+  --brand-bg: #e4f5ec;
+  --danger: #a91b36;
+  --danger-bg: #fff4f5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141a21;
+    --card: #202832;
+    --text: #f4f6fa;
+    --muted: #bec8d4;
+    --line: #36424e;
+    --button: #303b47;
+    --brand: #8ce0b4;
+    --brand-bg: #203d32;
+    --danger: #ffa9b4;
+    --danger-bg: #422b31;
+  }
+}
+* { box-sizing: border-box; }
+html { font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+.shell { width: min(780px, calc(100% - 40px)); margin: 38px auto; }
+.header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+.header h1 { margin: 0; font-size: 27px; letter-spacing: -.5px; }
+.header p { margin: 2px 0 0; color: var(--muted); }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; margin-bottom: 18px; }
+.panel p { margin: 10px 0 0; }
+.section-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+h2 { font-size: 18px; margin: 0; }
+.small, footer { color: var(--muted); font-size: 13px; }
+code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; }
+.pill { border-radius: 50px; padding: 3px 10px; color: var(--brand); background: var(--brand-bg); font-size: 12px; white-space: nowrap; }
+.count { display: inline-flex; justify-content: center; min-width: 26px; border-radius: 6px; background: var(--button); margin-left: 5px; padding: 1px 7px; font-size: 13px; }
+.site-list { padding: 0; margin: 17px 0 0; list-style: none; }
+.site-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.site-detail { display: flex; flex-direction: column; min-width: 0; }
+.site-detail strong { font-size: 15px; }
+.site-detail code { color: var(--muted); font-size: 12px; }
+.empty { padding: 16px; background: var(--bg); border-radius: 8px; }
+button { cursor: pointer; font: inherit; border: 1px solid transparent; border-radius: 8px; padding: 9px 13px; font-weight: 600; }
+button:focus-visible { outline: 3px solid #449cdc; outline-offset: 2px; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+.quiet { color: var(--text); border-color: var(--line); background: var(--button); }
+.danger { border-color: #dc9aa9; }
+.danger-button { background: #b4233e; color: white; margin-top: 18px; }
+.danger-button:hover:not(:disabled) { background: #94172f; }
+.status { min-height: 22px; color: var(--brand); font-weight: 600; }
+.status.error { color: var(--danger); }
+footer { margin: 18px 0 40px; text-align: center; }
+@media (max-width: 540px) {
+  .shell { width: calc(100% - 20px); margin: 18px auto; }
+  .panel { padding: 16px; }
+  .section-top { align-items: flex-start; }
+  .site-list li { align-items: flex-start; }
+  button.remove { white-space: nowrap; }
+}
+/* v1.0.4: manual URL rules and per-entry editors */
+.add-form { display: grid; gap: 11px; margin-top: 18px; }
+.add-form label { display: block; font-weight: 600; font-size: 13px; }
+input, select { min-width: 0; background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; font: inherit; }
+input:focus-visible, select:focus-visible { outline: 3px solid #449cdc; outline-offset: 2px; }
+#add-url { width: 100%; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.field { display: grid; gap: 5px; }
+[hidden] { display: none !important; }
+.primary { background: #117657; color: #fff; justify-self: start; }
+.primary:hover:not(:disabled) { background: #0c6147; }
+.site-list li { align-items: flex-start; }
+.site-detail { flex: 1; }
+.rule-editor { flex: 0 0 auto; display: grid; grid-template-columns: 140px 180px auto auto; gap: 7px; align-items: center; }
+.rule-editor select { font-size: 13px; width: 100%; }
+.rule-editor button { padding: 8px 10px; font-size: 13px; }
+@media (max-width: 960px) {
+  .shell { width: min(900px, calc(100% - 30px)); }
+  .site-list li { flex-wrap: wrap; }
+  .rule-editor { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) { .fields { grid-template-columns: 1fr; } }
+
+/* v1.0.5.1: hostname No History rules */
+h3 { font-size: 15px; margin: 0; }
+.excluded-pill { color: var(--danger); background: var(--danger-bg); }
+.exclude-list-heading { margin-top: 26px; }
+.check-row { display: flex !important; align-items: center; gap: 9px; font-weight: 500 !important; }
+.check-row input, .exclude-check input { width: 17px; height: 17px; margin: 0; }
+.exclude-check { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; cursor: pointer; }
+.exclude-editor { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.exclude-detail { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.conflict-tag { display: inline-block; align-self: flex-start; margin-top: 6px; padding: 3px 7px; border-radius: 5px; background: var(--danger-bg); color: var(--danger); font-size: 12px; font-weight: 700; }
+/* v1.0.6 History Control: host entry, settings transfer and History Explorer */
+.shell { width: min(1080px, calc(100% - 32px)); }
+#host-entry-url, #host-entry-hostname { width: 100%; }
+.button-line { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; margin: 15px 0; }
+.button-line label { font-weight: 600; font-size: 13px; }
+#import-file { width: min(100%, 250px); }
+.file-picker { display: none; }
+.host-entry-editor { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.host-entry-editor input[type=url] { min-width: min(360px, 100%); max-width: 100%; flex: 1; }
+.host-entry-editor label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+.explorer-controls { display: grid; grid-template-columns: 1fr 210px; gap: 8px 12px; margin: 20px 0 14px; }
+.explorer-controls label { font-weight: 600; font-size: 13px; }
+.explorer-controls input, .explorer-controls select { width: 100%; }
+.explorer-controls label:nth-child(1) { grid-column: 1; grid-row: 1; }
+.explorer-controls input { grid-column: 1; grid-row: 2; }
+.explorer-controls label:nth-child(3) { grid-column: 2; grid-row: 1; }
+.explorer-controls select { grid-column: 2; grid-row: 2; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 9px; }
+.history-table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.history-table th, .history-table td { border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+.history-table tr:last-child td { border-bottom: 0; }
+.history-table th:not(:first-child), .history-table td:not(:first-child) { text-align: right; white-space: nowrap; }
+.history-table th { color: var(--muted); background: var(--bg); }
+.history-table a { overflow-wrap: anywhere; }
+.history-host-button { padding: 0; border: 0; background: transparent; color: var(--brand); text-align: left; font-weight: 600; }
+.history-host-button:hover { text-decoration: underline; }
+#explorer-detail h3 { margin: 15px 0; overflow-wrap: anywhere; }
+#explorer-more { margin-top: 12px; }
+@media (max-width: 650px) {
+  .explorer-controls { grid-template-columns: 1fr; }
+  .explorer-controls label:nth-child(1),.explorer-controls input,.explorer-controls label:nth-child(3),.explorer-controls select { grid-column: 1; grid-row: auto; }
+}
+
+
+/* v1.0.7: left-side section navigation + Minimum URL Count */
+.options-layout {
+  display: grid;
+  grid-template-columns: 212px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+.options-content { min-width: 0; }
+.navigation {
+  position: sticky;
+  top: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 15px 11px;
+}
+.navigation-header { padding: 0 10px 10px; }
+.navigation-header h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.nav-items { display: grid; gap: 4px; }
+.nav-item {
+  display: block;
+  width: 100%;
+  padding: 10px 11px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.nav-item:hover { background: var(--button); }
+.nav-item.active {
+  color: var(--brand);
+  border-color: var(--line);
+  background: var(--brand-bg);
+  font-weight: 700;
+}
+.nav-toggle { display: none; padding: 6px 10px; font-size: 13px; }
+.options-content .site-list li { flex-wrap: wrap; }
+.options-content .rule-editor { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.options-content .rule-editor button { min-width: 0; }
+.explorer-controls {
+  grid-template-columns: minmax(0, 1fr) minmax(130px, 160px) minmax(150px, 175px);
+  gap: 12px;
+}
+.explorer-control { display: grid; gap: 6px; align-content: start; }
+.explorer-control label { font-size: 13px; font-weight: 600; }
+.explorer-control input, .explorer-control select { width: 100%; grid-column: auto; grid-row: auto; }
+.explorer-filter-help { margin-top: 0 !important; margin-bottom: 14px !important; }
+@media (max-width: 1100px) and (min-width: 851px) {
+  .explorer-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .explorer-control:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 850px) {
+  .options-layout { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .navigation { position: static; padding: 12px; }
+  .navigation-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0;
+  }
+  .nav-toggle { display: inline-block; }
+  .nav-items { display: none; margin-top: 10px; }
+  .nav-items.is-open { display: grid; }
+}
+@media (max-width: 650px) {
+  .explorer-controls { grid-template-columns: minmax(0, 1fr); }
+  .explorer-control:first-child { grid-column: auto; }
+}
+
+
+/* v1.0.8: keep rule controls in one row while the available pane is wide.
+   Long URL text can wrap naturally. Break controls into rows only when the
+   *content pane*, not merely the outer window, becomes narrow. */
+.shell {
+  width: calc(100% - 32px);
+  max-width: none;
+}
+.options-layout { grid-template-columns: 212px minmax(0, 1fr); }
+.options-content {
+  min-width: 0;
+  container-name: options-pane;
+  container-type: inline-size;
+}
+.options-content .site-list li {
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 14px;
+}
+.options-content .site-detail,
+.options-content .exclude-detail {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+}
+.options-content .site-detail strong,
+.options-content .exclude-detail strong {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.options-content .site-detail code {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.options-content .conflict-tag {
+  flex: 0 0 auto;
+  margin-top: 0;
+  white-space: nowrap;
+}
+.options-content .rule-editor,
+.options-content .host-entry-editor,
+.options-content .exclude-editor {
+  width: auto;
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+.options-content .rule-editor { grid-template-columns: none; }
+.options-content .rule-editor select {
+  width: auto;
+  max-width: 270px;
+  min-width: max-content;
+}
+.options-content .rule-editor button,
+.options-content .host-entry-editor button,
+.options-content .exclude-editor button,
+.options-content .rule-editor select,
+.options-content .host-entry-editor label,
+.options-content .exclude-editor label,
+.options-content .button-line button,
+.options-content .button-line label,
+.nav-item {
+  white-space: nowrap;
+}
+.options-content .rule-editor button,
+.options-content .host-entry-editor button,
+.options-content .exclude-editor button,
+.options-content .rule-editor select,
+.options-content .host-entry-editor label,
+.options-content .exclude-editor label {
+  flex-shrink: 0;
+}
+.options-content .host-entry-editor input[type="url"] {
+  flex: 0 1 300px;
+  width: clamp(170px, 20vw, 300px);
+  min-width: 170px;
+  max-width: 300px;
+}
+.options-content .button-line { flex-wrap: nowrap; }
+.options-content .button-line > * { flex-shrink: 0; }
+.options-content .button-line .small { flex: 1 1 auto; min-width: 0; }
+/* Table columns stay aligned on narrow layouts, where their own container
+   provides horizontal scrolling instead of misaligning individual cells. */
+.options-content .history-table { min-width: 540px; }
+.options-content .history-table th,
+.options-content .history-table td { overflow-wrap: anywhere; }
+.options-content .history-table th:not(:first-child),
+.options-content .history-table td:not(:first-child) { white-space: nowrap; }
+.nav-item { overflow: hidden; text-overflow: ellipsis; }
+
+/* Use the usable Options content width so a sidebar cannot trigger a layout
+   failure before the browser reaches its small-screen media breakpoint. */
+@container options-pane (max-width: 840px) {
+  .options-content .site-list li {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 9px;
+  }
+  .options-content .site-detail, .options-content .exclude-detail {
+    flex: 1 1 100%;
+    align-items: baseline;
+  }
+  .options-content .rule-editor, .options-content .host-entry-editor, .options-content .exclude-editor {
+    flex: 1 1 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .options-content .host-entry-editor input[type="url"] {
+    flex: 1 1 230px;
+    width: auto;
+    min-width: min(230px, 100%);
+    max-width: none;
+  }
+  .options-content .button-line { flex-wrap: wrap; }
+  .options-content .button-line > * { flex-shrink: 1; }
+}
+@container options-pane (max-width: 440px) {
+  .options-content .site-detail, .options-content .exclude-detail { flex-wrap: wrap; }
+  .options-content .site-detail strong, .options-content .exclude-detail strong {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .options-content .rule-editor select { max-width: 100%; min-width: 0; }
+}
+/* At narrow viewport sizes the sidebar must stack above the content pane. */
+@media (max-width: 850px) {
+  .options-layout { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
+
+/* v1.0.9: daily deletion statistics, following the responsive Options pane. */
+.stats-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 22px 0 24px; }
+.stats-summary-item { min-width: 0; border: 1px solid var(--line); border-radius: 9px; padding: 14px; background: var(--bg); }
+.stats-summary-item div { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.stats-summary-item strong { display: block; margin-top: 7px; font-size: 26px; line-height: 1.15; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.stats-table-heading { margin: 4px 0 12px; }
+.stats-table { min-width: 360px !important; }
+.stats-table td:not(:first-child) { font-variant-numeric: tabular-nums; }
+.stats-note { margin-top: 16px !important; }
+@container options-pane (max-width: 920px) {
+  .stats-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container options-pane (max-width: 440px) {
+  .stats-summary { grid-template-columns: 1fr; }
+}
+
+/* Full Backup uses the existing responsive action row; the heading separates
+   full migration backups from the older rules-only JSON export. */
+.full-backup { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 18px; }
+.full-backup .button-line { margin-bottom: 5px; }

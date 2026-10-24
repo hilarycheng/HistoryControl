@@ -1,0 +1,623 @@
+{
+  "extensionName": {
+    "message": "History Control"
+  },
+  "extensionDescription": {
+    "message": "保留指定網址入口、清理指定主機名稱的紀錄，並瀏覽歷史紀錄統計。"
+  },
+  "toolbarDefault": {
+    "message": "保護目前網址"
+  },
+  "toolbarUnsupported": {
+    "message": "無法保護此頁面。請開啟 HTTP 或 HTTPS 網站。"
+  },
+  "toolbarUnsaved": {
+    "message": "按一下以保護："
+  },
+  "toolbarProtected": {
+    "message": "已保護網址："
+  },
+  "toolbarMatchedEntryOnly": {
+    "message": "符合規則，僅保留入口網址的瀏覽紀錄："
+  },
+  "menuManage": {
+    "message": "管理瀏覽紀錄規則／立即清理…"
+  },
+  "errorInvalidUrl": {
+    "message": "請輸入有效的完整網址（http:// 或 https://）。"
+  },
+  "errorInvalidRule": {
+    "message": "比對模式或瀏覽紀錄規則無效。"
+  },
+  "errorPaging": {
+    "message": "無法安全地分頁讀取瀏覽紀錄。"
+  },
+  "errorCleanLimit": {
+    "message": "本次清理的結果過多。請再次執行「立即清理」。"
+  },
+  "popupPageTitle": {
+    "message": "History Control — 網址規則"
+  },
+  "popupSubtitle": {
+    "message": "按一下以保護或查看目前網址的規則"
+  },
+  "popupLoading": {
+    "message": "正在檢查目前網址…"
+  },
+  "popupNoTab": {
+    "message": "找不到目前分頁。請開啟網站後重試。"
+  },
+  "popupUnsupported": {
+    "message": "無法保護此頁面。請開啟 HTTP 或 HTTPS 網站。"
+  },
+  "popupSaved": {
+    "message": "✓ 已新增受保護網址"
+  },
+  "popupAlreadyProtected": {
+    "message": "✓ 已受保護"
+  },
+  "popupMatchedAll": {
+    "message": "✓ 符合保護規則 — 保留瀏覽紀錄"
+  },
+  "popupMatchedEntryOnly": {
+    "message": "✓ 符合保護規則 — 僅保留入口網址"
+  },
+  "popupHint": {
+    "message": "只清理已設定的主機名稱。規則優先順序為「不保留紀錄」、「僅保留主機入口」，最後為「受保護網址」。"
+  },
+  "popupManage": {
+    "message": "開啟設定"
+  },
+  "popupError": {
+    "message": "無法保護網址："
+  },
+  "popupOptionsError": {
+    "message": "無法開啟設定："
+  },
+  "popupRuleLabel": {
+    "message": "符合規則："
+  },
+  "pageTitle": {
+    "message": "History Control — 設定"
+  },
+  "optionsDescription": {
+    "message": "僅管理您明確指定的主機名稱及網址入口，其他網站完全不受影響。"
+  },
+  "howTitle": {
+    "message": "使用方式"
+  },
+  "howPill": {
+    "message": "自動清理：僅限已設定的網站"
+  },
+  "howStep1": {
+    "message": "按一下工具列圖示保護目前網址，或在設定頁新增受保護網址、主機入口與不保留紀錄規則。"
+  },
+  "howStep2": {
+    "message": "不保留紀錄規則會刪除所有符合的網址；僅保留主機入口規則只保留一個指定入口，並清理所選主機及子網域的其他紀錄。"
+  },
+  "addTitle": {
+    "message": "新增受保護網址"
+  },
+  "addDescription": {
+    "message": "輸入完整網址並選擇比對方式。儲存入口網址時會移除查詢參數及片段識別碼。"
+  },
+  "fieldUrl": {
+    "message": "網址"
+  },
+  "urlPlaceholder": {
+    "message": "請輸入完整網址"
+  },
+  "fieldMatchMode": {
+    "message": "比對模式"
+  },
+  "modeExact": {
+    "message": "完全比對"
+  },
+  "modePrefix": {
+    "message": "路徑前綴比對"
+  },
+  "fieldHistoryMode": {
+    "message": "瀏覽紀錄處理方式"
+  },
+  "historyEntry": {
+    "message": "僅保留入口網址"
+  },
+  "historyAll": {
+    "message": "保留所有符合規則的網址"
+  },
+  "helpExact": {
+    "message": "完全比對僅匹配指定路徑，且只保留標準化後的入口網址紀錄。"
+  },
+  "helpPrefix": {
+    "message": "前綴比對包含指定路徑及其子頁面。例如 /g/ 可匹配 /g/abc，但不匹配 /games。"
+  },
+  "helpEntry": {
+    "message": "保留入口網址，自動刪除其子頁面的瀏覽紀錄。"
+  },
+  "helpAll": {
+    "message": "保留 Firefox History 中所有符合此規則的子頁面網址。"
+  },
+  "addButton": {
+    "message": "新增受保護網址"
+  },
+  "addSuccess": {
+    "message": "已新增受保護網址："
+  },
+  "addExists": {
+    "message": "此路徑已受保護，請編輯下方現有規則："
+  },
+  "addError": {
+    "message": "無法新增網址："
+  },
+  "listTitle": {
+    "message": "受保護網址"
+  },
+  "refresh": {
+    "message": "重新整理"
+  },
+  "listEmpty": {
+    "message": "尚未設定受保護網址。請使用工具列圖示或上方表單新增。"
+  },
+  "listHelp": {
+    "message": "每個網址可以分別設定規則。移除規則不會立即刪除紀錄；移除某網站的最後一條規則後，即停止清理該網站。"
+  },
+  "editSave": {
+    "message": "儲存規則"
+  },
+  "editSaved": {
+    "message": "已更新規則："
+  },
+  "editError": {
+    "message": "無法更新規則："
+  },
+  "remove": {
+    "message": "移除"
+  },
+  "removeConfirm": {
+    "message": "確定移除此網址的保護？現有紀錄不會立即刪除："
+  },
+  "removeSaved": {
+    "message": "已移除保護："
+  },
+  "removeError": {
+    "message": "無法移除保護："
+  },
+  "listError": {
+    "message": "無法讀取受保護網址："
+  },
+  "cleanTitle": {
+    "message": "立即清理"
+  },
+  "cleanDescription": {
+    "message": "清除受保護主機中不需要保留的網址、主機入口規則範圍內除指定入口以外的網址，以及不保留紀錄規則所匹配的全部網址。其他網站完全不受影響。此操作無法復原。"
+  },
+  "cleanDetails": {
+    "message": "不會刪除書籤、Cookie 或已下載的檔案。"
+  },
+  "cleanButton": {
+    "message": "清理已設定主機的瀏覽紀錄"
+  },
+  "cleanEmpty": {
+    "message": "沒有受保護網址、主機入口或不保留紀錄規則，因此無須清理。"
+  },
+  "cleanConfirm": {
+    "message": "確定清理已設定主機的瀏覽紀錄？只處理符合規則的主機。優先順序為不保留紀錄、主機入口及受保護網址。此操作無法復原。"
+  },
+  "cleanProgress": {
+    "message": "正在清理已設定網站的瀏覽紀錄…請保持此設定頁開啟。"
+  },
+  "cleanSuccess": {
+    "message": "清理完成。已刪除的網址紀錄："
+  },
+  "cleanSavedCount": {
+    "message": "保留的入口網址："
+  },
+  "cleanFailure": {
+    "message": "部分網址紀錄刪除失敗："
+  },
+  "cleanError": {
+    "message": "清理未完成："
+  },
+  "footer": {
+    "message": "Firefox 會先寫入瀏覽紀錄，擴充功能才能將其移除。因此，「不保留瀏覽紀錄」代表盡快刪除，並非阻止寫入。"
+  },
+  "toolbarExcluded": {
+    "message": "不保留瀏覽紀錄 — 自動刪除以下主機名稱的紀錄："
+  },
+  "errorInvalidHostname": {
+    "message": "請輸入有效的主機名稱，不可包含路徑、連接埠、萬用字元或登入資訊。"
+  },
+  "popupExcluded": {
+    "message": "× 不保留瀏覽紀錄 — 將自動刪除"
+  },
+  "excludeTitle": {
+    "message": "不保留瀏覽紀錄 — 主機名稱比對"
+  },
+  "excludePill": {
+    "message": "刪除全部符合規則的網址"
+  },
+  "excludeDescription": {
+    "message": "刪除指定主機名稱的全部瀏覽紀錄，亦可包含各層級子網域。即使網址已受保護亦不會保留。現有紀錄可使用「立即清理」移除。"
+  },
+  "fieldHostname": {
+    "message": "主機名稱"
+  },
+  "hostnamePlaceholder": {
+    "message": "請輸入主機名稱"
+  },
+  "includeSubdomains": {
+    "message": "包含所有子網域"
+  },
+  "onlyHostname": {
+    "message": "僅限指定主機名稱"
+  },
+  "excludeAddButton": {
+    "message": "新增不保留紀錄規則"
+  },
+  "excludeListTitle": {
+    "message": "不保留紀錄的主機名稱"
+  },
+  "excludeEmpty": {
+    "message": "尚未設定不保留紀錄規則。"
+  },
+  "excludeHelp": {
+    "message": "不保留紀錄規則優先於受保護網址。可逐項啟用或停用子網域比對。移除不保留規則不會還原先前刪除的瀏覽紀錄。"
+  },
+  "excludeConflictTag": {
+    "message": "覆蓋受保護入口"
+  },
+  "conflictBadge": {
+    "message": "已被不保留紀錄規則覆蓋"
+  },
+  "excludeConflictConfirm": {
+    "message": "此不保留紀錄規則與下列受保護入口重疊。這些入口將不再保留；執行「立即清理」亦會刪除相關瀏覽紀錄。確定繼續？"
+  },
+  "excludeAdded": {
+    "message": "已新增不保留紀錄規則："
+  },
+  "excludeExists": {
+    "message": "此主機名稱已有不保留紀錄規則，請編輯現有項目："
+  },
+  "excludeUpdated": {
+    "message": "已更新不保留紀錄規則："
+  },
+  "excludeRemoved": {
+    "message": "已移除不保留紀錄規則："
+  },
+  "excludeRemoveConfirm": {
+    "message": "確定移除此主機名稱的不保留紀錄規則？此規則將不再刪除新的瀏覽紀錄："
+  },
+  "excludeError": {
+    "message": "無法儲存不保留紀錄規則："
+  },
+  "toolbarHostEntrySaved": {
+    "message": "已保留主機入口："
+  },
+  "toolbarHostEntryClean": {
+    "message": "主機入口規則將清除此網址的瀏覽紀錄："
+  },
+  "popupHostEntrySaved": {
+    "message": "✓ 已保留主機入口"
+  },
+  "popupHostEntryClean": {
+    "message": "× 符合主機規則，僅保留入口網址"
+  },
+  "hostEntryTitle": {
+    "message": "僅保留主機入口"
+  },
+  "hostEntryPill": {
+    "message": "只保留一個網址"
+  },
+  "hostEntryDescription": {
+    "message": "只保留指定入口網址，刪除同一主機及選定子網域的其他瀏覽紀錄。不保留紀錄規則仍具有最高優先權。"
+  },
+  "hostEntryUrlLabel": {
+    "message": "入口網址（選填）"
+  },
+  "hostEntryUrlPlaceholder": {
+    "message": "請輸入需要保留的入口網址"
+  },
+  "hostEntryOptionalUrl": {
+    "message": "留空則預設保留此主機名稱的 HTTPS 首頁。"
+  },
+  "hostEntryAdd": {
+    "message": "新增主機入口規則"
+  },
+  "hostEntryList": {
+    "message": "主機入口規則"
+  },
+  "hostEntryEmpty": {
+    "message": "尚未新增主機入口規則。"
+  },
+  "hostEntryAdded": {
+    "message": "已新增主機入口規則："
+  },
+  "hostEntryExists": {
+    "message": "此主機名稱已設有主機入口規則，可在下方編輯："
+  },
+  "hostEntryUpdated": {
+    "message": "已更新主機入口規則："
+  },
+  "hostEntryRemoved": {
+    "message": "已移除主機入口規則："
+  },
+  "hostEntryError": {
+    "message": "無法儲存主機入口規則："
+  },
+  "hostEntryRemoveConfirm": {
+    "message": "要移除此主機入口規則嗎？先前刪除的紀錄無法還原："
+  },
+  "hostEntryConflictTag": {
+    "message": "規則重疊"
+  },
+  "hostEntryConflictConfirm": {
+    "message": "此主機入口規則與現有規則重疊。不保留紀錄規則優先，部分受保護網址可能被清除。是否繼續？"
+  },
+  "errorInvalidHostEntry": {
+    "message": "入口網址必須是位於指定主機範圍內的 HTTP(S) 網址。"
+  },
+  "backupTitle": {
+    "message": "匯出／匯入規則"
+  },
+  "backupDescription": {
+    "message": "僅將規則匯出為本機 JSON 備份，不包含瀏覽紀錄。設定檔可能包含私人網址。匯入不會執行「立即清理」。"
+  },
+  "exportButton": {
+    "message": "匯出設定（JSON）"
+  },
+  "importChoose": {
+    "message": "選擇 JSON 檔案"
+  },
+  "importModeLabel": {
+    "message": "匯入方式"
+  },
+  "importMerge": {
+    "message": "合併：重複項目保留現有設定"
+  },
+  "importReplace": {
+    "message": "取代：覆蓋所有現有規則"
+  },
+  "importButton": {
+    "message": "匯入設定"
+  },
+  "exportSuccess": {
+    "message": "已開始匯出設定。"
+  },
+  "exportError": {
+    "message": "匯出失敗："
+  },
+  "importNoFile": {
+    "message": "請先選擇 JSON 檔案。"
+  },
+  "importTooLarge": {
+    "message": "設定檔或規則數量超出限制。"
+  },
+  "importInvalid": {
+    "message": "設定檔無效或內容不一致，未匯入任何資料。"
+  },
+  "importUnsupported": {
+    "message": "不支援此設定備份版本。"
+  },
+  "importReplaceConfirm": {
+    "message": "確定使用所選檔案取代所有現有規則嗎？此操作無法復原。建議先匯出備份。"
+  },
+  "importMergeConfirm": {
+    "message": "確定合併此檔案的規則嗎？重複項目會保留現有設定。"
+  },
+  "importSuccess": {
+    "message": "匯入完成。"
+  },
+  "importAdded": {
+    "message": "新增"
+  },
+  "importSkipped": {
+    "message": "略過重複項目"
+  },
+  "importError": {
+    "message": "匯入失敗："
+  },
+  "explorerTitle": {
+    "message": "瀏覽紀錄總覽"
+  },
+  "explorerDescription": {
+    "message": "檢視目前仍存在的瀏覽紀錄。您可以篩選主機名稱或網址、依主機排名，並展開各主機的網址清單。"
+  },
+  "explorerScan": {
+    "message": "分析瀏覽紀錄"
+  },
+  "explorerCancel": {
+    "message": "取消"
+  },
+  "explorerFilterLabel": {
+    "message": "依主機名稱或網址篩選"
+  },
+  "explorerFilterPlaceholder": {
+    "message": "請輸入搜尋文字"
+  },
+  "explorerSortHosts": {
+    "message": "主機排名方式"
+  },
+  "explorerSortUrls": {
+    "message": "不同網址數量 ↓"
+  },
+  "explorerSortVisits": {
+    "message": "造訪次數 ↓"
+  },
+  "explorerSortLast": {
+    "message": "最後造訪時間 ↓"
+  },
+  "explorerColHostname": {
+    "message": "主機名稱"
+  },
+  "explorerColUrls": {
+    "message": "網址數量"
+  },
+  "explorerColVisits": {
+    "message": "造訪次數"
+  },
+  "explorerColUrl": {
+    "message": "網址"
+  },
+  "explorerColLast": {
+    "message": "最後造訪時間"
+  },
+  "explorerSortUrlLabel": {
+    "message": "網址排序方式"
+  },
+  "explorerBack": {
+    "message": "← 返回主機清單"
+  },
+  "explorerMore": {
+    "message": "載入另外 100 項"
+  },
+  "explorerNotes": {
+    "message": "統計只包含目前仍存在的瀏覽紀錄。已自動刪除的網址無法納入統計。清理後請重新分析以更新結果。"
+  },
+  "explorerReady": {
+    "message": "請按「分析瀏覽紀錄」開始完整掃描。"
+  },
+  "explorerScanning": {
+    "message": "正在掃描瀏覽紀錄……"
+  },
+  "explorerProgress": {
+    "message": "已掃描網址數量／查詢次數："
+  },
+  "explorerCancelled": {
+    "message": "已取消掃描。如有之前的完整結果，仍會保留。"
+  },
+  "explorerDone": {
+    "message": "瀏覽紀錄掃描完成。"
+  },
+  "explorerError": {
+    "message": "無法完成完整瀏覽紀錄掃描："
+  },
+  "explorerTooLarge": {
+    "message": "瀏覽紀錄過多，無法安全完成完整統計；不會顯示不完整結果。"
+  },
+  "explorerSummaryHosts": {
+    "message": "主機數量："
+  },
+  "explorerSummaryUrls": {
+    "message": "網址數量："
+  },
+  "explorerSummaryVisits": {
+    "message": "造訪次數："
+  },
+  "navTitle": {
+    "message": "功能選單"
+  },
+  "navToggle": {
+    "message": "選單"
+  },
+  "navOverview": {
+    "message": "概覽"
+  },
+  "navProtected": {
+    "message": "受保護網址"
+  },
+  "navHostEntry": {
+    "message": "主機入口規則"
+  },
+  "navNoHistory": {
+    "message": "不保留瀏覽紀錄"
+  },
+  "navExplorer": {
+    "message": "瀏覽紀錄分析"
+  },
+  "navBackup": {
+    "message": "匯出／匯入"
+  },
+  "navCleanup": {
+    "message": "立即清理"
+  },
+  "explorerMinUrlsLabel": {
+    "message": "最少網址數量"
+  },
+  "explorerMinUrlsHelp": {
+    "message": "隱藏不同網址數量低於設定值的主機。此篩選只影響顯示，不會刪除瀏覽紀錄。"
+  },
+  "explorerNoHosts": {
+    "message": "沒有符合目前篩選條件的主機。"
+  },
+  "navStatistics": {
+    "message": "統計"
+  },
+  "statsTitle": {
+    "message": "每日瀏覽紀錄刪除統計"
+  },
+  "statsRefresh": {
+    "message": "重新整理"
+  },
+  "statsDescription": {
+    "message": "分別統計自動清理及「立即清理」成功執行的刪除次數。"
+  },
+  "statsTodayAuto": {
+    "message": "今日自動刪除"
+  },
+  "statsSevenAuto": {
+    "message": "最近 7 日自動刪除"
+  },
+  "statsThirtyAuto": {
+    "message": "最近 30 日自動刪除"
+  },
+  "statsThirtyManual": {
+    "message": "最近 30 日手動清理"
+  },
+  "statsDailyHeading": {
+    "message": "每日統計（最近 30 日）"
+  },
+  "statsDateCol": {
+    "message": "本地日期"
+  },
+  "statsAutoCol": {
+    "message": "自動刪除"
+  },
+  "statsManualCol": {
+    "message": "立即清理"
+  },
+  "statsNotes": {
+    "message": "數字代表成功執行的網址刪除操作次數，並非個別造訪次數或必然不同的網址數；同一網址重複執行刪除呼叫時亦可能重複計算。日期以執行刪除時的本地日期計算。僅儲存日期及總數，不儲存網址；無法回溯舊版已刪除的紀錄。"
+  },
+  "statsLoading": {
+    "message": "正在載入統計資料…"
+  },
+  "statsError": {
+    "message": "無法載入統計資料。"
+  },
+  "fullBackupTitle": {
+    "message": "完整備份 — 規則與每日統計"
+  },
+  "fullBackupDescription": {
+    "message": "將暫時載入的開發版更換為 Mozilla 簽署的正式版本前，請先建立完整備份。本機 JSON 檔案包含私人網址及每日刪除次數，請妥善保管。還原會取代所有規則與每日統計，但不會執行「立即清理」。"
+  },
+  "fullBackupExport": {
+    "message": "匯出完整備份"
+  },
+  "fullBackupChoose": {
+    "message": "選擇完整備份 JSON 檔案"
+  },
+  "fullBackupRestore": {
+    "message": "還原完整備份"
+  },
+  "fullBackupExportSuccess": {
+    "message": "已開始下載完整備份。移除開發版前，請確認 JSON 檔案已正確儲存。"
+  },
+  "fullBackupExportError": {
+    "message": "無法匯出完整備份："
+  },
+  "fullBackupRestoreConfirm": {
+    "message": "是否以完整備份取代所有規則和每日統計？此操作無法復原，請先保留目前設定的備份。"
+  },
+  "fullBackupRestoreSuccess": {
+    "message": "完整備份已還原（受保護網址／不保留紀錄／主機入口／統計日數）："
+  },
+  "fullBackupRestoreError": {
+    "message": "無法還原完整備份："
+  },
+  "fullBackupInvalid": {
+    "message": "完整備份檔案、版本或擴充功能 ID 無效。未還原任何資料。"
+  },
+  "fullBackupTooLarge": {
+    "message": "完整備份檔案超出大小限制。"
+  }
+}

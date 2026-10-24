@@ -1,0 +1,707 @@
+TAP version 13
+# Subtest: extension maintains the existing ID and v1.1.0 version
+ok 1 - extension maintains the existing ID and v1.1.0 version
+  ---
+  duration_ms: 0.75753
+  type: 'test'
+  ...
+# Subtest: 48px, 96px and 128px official app icons exist and have correct PNG dimensions
+ok 2 - 48px, 96px and 128px official app icons exist and have correct PNG dimensions
+  ---
+  duration_ms: 0.503287
+  type: 'test'
+  ...
+# Subtest: toolbar default and three action-state icons remain unchanged
+ok 3 - toolbar default and three action-state icons remain unchanged
+  ---
+  duration_ms: 0.663478
+  type: 'test'
+  ...
+# Subtest: one popup open protects current root URL and marks saved (without learning)
+ok 4 - one popup open protects current root URL and marks saved (without learning)
+  ---
+  duration_ms: 19.889144
+  type: 'test'
+  ...
+# Subtest: only protected host inner visits are auto-removed; unprotected visits stay
+ok 5 - only protected host inner visits are auto-removed; unprotected visits stay
+  ---
+  duration_ms: 6.440767
+  type: 'test'
+  ...
+# Subtest: Clean Now deletes only protected inner URLs across multiple search pages
+ok 6 - Clean Now deletes only protected inner URLs across multiple search pages
+  ---
+  duration_ms: 72.299293
+  type: 'test'
+  ...
+# Subtest: an empty whitelist never deletes existing or future browsing history
+ok 7 - an empty whitelist never deletes existing or future browsing history
+  ---
+  duration_ms: 7.70609
+  type: 'test'
+  ...
+# Subtest: removing protection stops auto deletion and leaves old History untouched
+ok 8 - removing protection stops auto deletion and leaves old History untouched
+  ---
+  duration_ms: 3.638021
+  type: 'test'
+  ...
+# Subtest: externally removed protected root is restored from whitelist
+ok 9 - externally removed protected root is restored from whitelist
+  ---
+  duration_ms: 2.482844
+  type: 'test'
+  ...
+# Subtest: www hostname maps to same saved path; other paths and subdomains do not
+ok 10 - www hostname maps to same saved path; other paths and subdomains do not
+  ---
+  duration_ms: 2.244606
+  type: 'test'
+  ...
+# Subtest: internal browser pages still show a clickable button and an explicit unsupported result
+ok 11 - internal browser pages still show a clickable button and an explicit unsupported result
+  ---
+  duration_ms: 1.313095
+  type: 'test'
+  ...
+# Subtest: protected sites persist across event page reload
+ok 12 - protected sites persist across event page reload
+  ---
+  duration_ms: 2.682325
+  type: 'test'
+  ...
+# Subtest: only exact protected hostname is cleaned, not similar or subdomains
+ok 13 - only exact protected hostname is cleaned, not similar or subdomains
+  ---
+  duration_ms: 2.381112
+  type: 'test'
+  ...
+# Subtest: multiple protected hostnames are cleaned independently
+ok 14 - multiple protected hostnames are cleaned independently
+  ---
+  duration_ms: 3.023367
+  type: 'test'
+  ...
+# Subtest: Clean Now only deletes URL on protected host even when unrelated search result matches the host string
+ok 15 - Clean Now only deletes URL on protected host even when unrelated search result matches the host string
+  ---
+  duration_ms: 7.58021
+  type: 'test'
+  ...
+# History Control: Clean Now failed Error: Simulated permission failure
+#     at f.browser.history.deleteUrl (/mnt/data/history-control-listed-v1.1.0/tests/background.test.js:354:55)
+#     at background.js:926:39
+#     at Function.from (<anonymous>)
+#     at performCleanNow (background.js:922:33)
+# Subtest: Clean Now reports failure for protected URL while leaving unrelated History untouched
+ok 16 - Clean Now reports failure for protected URL while leaving unrelated History untouched
+  ---
+  duration_ms: 2.807593
+  type: 'test'
+  ...
+# Subtest: Object.prototype-like hostnames never count as protected domains
+ok 17 - Object.prototype-like hostnames never count as protected domains
+  ---
+  duration_ms: 2.361792
+  type: 'test'
+  ...
+# Subtest: v1.0.3 stores several exact protected paths under one hostname
+ok 18 - v1.0.3 stores several exact protected paths under one hostname
+  ---
+  duration_ms: 14.030984
+  type: 'test'
+  ...
+# Subtest: Protected Domain auto delete keeps just canonical saved URL records
+ok 19 - Protected Domain auto delete keeps just canonical saved URL records
+  ---
+  duration_ms: 10.029235
+  type: 'test'
+  ...
+# Subtest: Clean Now removes only other URLs under protected host, preserves three paths
+ok 20 - Clean Now removes only other URLs under protected host, preserves three paths
+  ---
+  duration_ms: 5.366151
+  type: 'test'
+  ...
+# Subtest: Toolbar deduplicates query, fragment and slash variants by path
+ok 21 - Toolbar deduplicates query, fragment and slash variants by path
+  ---
+  duration_ms: 4.140226
+  type: 'test'
+  ...
+# Subtest: individual entry can be unprotected while other entries remain protected
+ok 22 - individual entry can be unprotected while other entries remain protected
+  ---
+  duration_ms: 10.752282
+  type: 'test'
+  ...
+# Subtest: v1.0.2 whitelist migrates to multi-entry format without losing old homepage
+ok 23 - v1.0.2 whitelist migrates to multi-entry format without losing old homepage
+  ---
+  duration_ms: 3.347115
+  type: 'test'
+  ...
+# Subtest: deleting saved entries outside extension automatically restores each saved path
+ok 24 - deleting saved entries outside extension automatically restores each saved path
+  ---
+  duration_ms: 3.636289
+  type: 'test'
+  ...
+# Subtest: multiple protected paths survive restart in persistent storage
+ok 25 - multiple protected paths survive restart in persistent storage
+  ---
+  duration_ms: 4.645257
+  type: 'test'
+  ...
+# Subtest: failed second path save does not destroy existing protected entry
+ok 26 - failed second path save does not destroy existing protected entry
+  ---
+  duration_ms: 3.645683
+  type: 'test'
+  ...
+# Subtest: saving /books alone does not implicitly save the website homepage
+ok 27 - saving /books alone does not implicitly save the website homepage
+  ---
+  duration_ms: 5.267823
+  type: 'test'
+  ...
+# Subtest: v1.0.4 manually adds an exact URL, normalizes query/slash, and leaves other hosts untouched
+ok 28 - v1.0.4 manually adds an exact URL, normalizes query/slash, and leaves other hosts untouched
+  ---
+  duration_ms: 2.339059
+  type: 'test'
+  ...
+# Subtest: prefix entry-only matches descendants in toolbar, retains only saved entry URL
+ok 29 - prefix entry-only matches descendants in toolbar, retains only saved entry URL
+  ---
+  duration_ms: 2.945881
+  type: 'test'
+  ...
+# Subtest: prefix keep-all retains descendants including query variants; cleans other paths
+ok 30 - prefix keep-all retains descendants including query variants; cleans other paths
+  ---
+  duration_ms: 3.815809
+  type: 'test'
+  ...
+# Subtest: updating one rule switches prefix behavior without changing other protected entries
+ok 31 - updating one rule switches prefix behavior without changing other protected entries
+  ---
+  duration_ms: 4.445936
+  type: 'test'
+  ...
+# Subtest: most-specific rule wins, and all explicitly saved entry URLs always survive
+ok 32 - most-specific rule wins, and all explicitly saved entry URLs always survive
+  ---
+  duration_ms: 6.386095
+  type: 'test'
+  ...
+# Subtest: manual duplicate path cannot overwrite an existing rule, and allows exact child beneath prefix
+ok 33 - manual duplicate path cannot overwrite an existing rule, and allows exact child beneath prefix
+  ---
+  duration_ms: 3.333914
+  type: 'test'
+  ...
+# Subtest: legacy v1.0.3 entries migrate to exact/entry and survive adding a prefix
+ok 34 - legacy v1.0.3 entries migrate to exact/entry and survive adding a prefix
+  ---
+  duration_ms: 3.545763
+  type: 'test'
+  ...
+# Subtest: invalid/manual URLs and invalid rule changes fail closed
+ok 35 - invalid/manual URLs and invalid rule changes fail closed
+  ---
+  duration_ms: 2.309304
+  type: 'test'
+  ...
+# Subtest: background tooltip uses Firefox locale, with English default and Traditional Chinese
+ok 36 - background tooltip uses Firefox locale, with English default and Traditional Chinese
+  ---
+  duration_ms: 3.313924
+  type: 'test'
+  ...
+# Subtest: No History matches apex, www, and deeply nested subdomains, never unrelated sites
+ok 37 - No History matches apex, www, and deeply nested subdomains, never unrelated sites
+  ---
+  duration_ms: 6.081216
+  type: 'test'
+  ...
+# Subtest: No History with Include Subdomains off only deletes the exact hostname
+ok 38 - No History with Include Subdomains off only deletes the exact hostname
+  ---
+  duration_ms: 6.077861
+  type: 'test'
+  ...
+# Subtest: No History precedence stops restore of saved entry after visit deletion and Clean Now
+ok 39 - No History precedence stops restore of saved entry after visit deletion and Clean Now
+  ---
+  duration_ms: 4.164945
+  type: 'test'
+  ...
+# Subtest: No History wins over Prefix Keep All and does not affect other protected domains
+ok 40 - No History wins over Prefix Keep All and does not affect other protected domains
+  ---
+  duration_ms: 4.286337
+  type: 'test'
+  ...
+# Subtest: Clean Now with only No History rules deletes all historic subdomains across pages
+ok 41 - Clean Now with only No History rules deletes all historic subdomains across pages
+  ---
+  duration_ms: 46.677698
+  type: 'test'
+  ...
+# Subtest: Clean Now handles both protected-host and No History rules without deleting unrelated pages
+ok 42 - Clean Now handles both protected-host and No History rules without deleting unrelated pages
+  ---
+  duration_ms: 2.723219
+  type: 'test'
+  ...
+# Subtest: Removing No History reactivates protected entry without recovering unrelated visits
+ok 43 - Removing No History reactivates protected entry without recovering unrelated visits
+  ---
+  duration_ms: 2.951813
+  type: 'test'
+  ...
+# Subtest: Updating includeSubdomains flag narrows exclusion and restores now-active protected www entry
+ok 44 - Updating includeSubdomains flag narrows exclusion and restores now-active protected www entry
+  ---
+  duration_ms: 2.776789
+  type: 'test'
+  ...
+# Subtest: Conflicting exclusions prioritize most-specific hostname; removing root keeps child rule
+ok 45 - Conflicting exclusions prioritize most-specific hostname; removing root keeps child rule
+  ---
+  duration_ms: 7.491887
+  type: 'test'
+  ...
+# Subtest: Rejected No History rule hostnames cannot accidentally widen deletion scope
+ok 46 - Rejected No History rule hostnames cannot accidentally widen deletion scope
+  ---
+  duration_ms: 1.978388
+  type: 'test'
+  ...
+# Subtest: No History storage persists across restart independently of protectedSites
+ok 47 - No History storage persists across restart independently of protectedSites
+  ---
+  duration_ms: 3.035029
+  type: 'test'
+  ...
+# Subtest: Malformed excludedHosts storage entries are ignored rather than wiping arbitrary domains
+ok 48 - Malformed excludedHosts storage entries are ignored rather than wiping arbitrary domains
+  ---
+  duration_ms: 6.240183
+  type: 'test'
+  ...
+# Subtest: No History remains active after external storage changes and does not alter other domains
+ok 49 - No History remains active after external storage changes and does not alter other domains
+  ---
+  duration_ms: 1.447539
+  type: 'test'
+  ...
+# Subtest: Duplicate No History addition remains idempotent and updating requires explicit action
+ok 50 - Duplicate No History addition remains idempotent and updating requires explicit action
+  ---
+  duration_ms: 1.635913
+  type: 'test'
+  ...
+# Subtest: Host Entry retains exactly one homepage, deleting same hostname and all selected subdomains
+ok 51 - Host Entry retains exactly one homepage, deleting same hostname and all selected subdomains
+  ---
+  duration_ms: 2.264399
+  type: 'test'
+  ...
+# Subtest: Host Entry restricted to exact hostname leaves subdomain and unrelated sites untouched
+ok 52 - Host Entry restricted to exact hostname leaves subdomain and unrelated sites untouched
+  ---
+  duration_ms: 1.420879
+  type: 'test'
+  ...
+# Subtest: Host Entry overrides Protected URL but No History overrides Host Entry and blocks restore
+ok 53 - Host Entry overrides Protected URL but No History overrides Host Entry and blocks restore
+  ---
+  duration_ms: 2.301595
+  type: 'test'
+  ...
+# Subtest: Host Entry Clean Now scans more than two batches without touching any unrelated history
+ok 54 - Host Entry Clean Now scans more than two batches without touching any unrelated history
+  ---
+  duration_ms: 32.582745
+  type: 'test'
+  ...
+# Subtest: Host Entry saved URL is restored when user clears History; removal stops auto-clean
+ok 55 - Host Entry saved URL is restored when user clears History; removal stops auto-clean
+  ---
+  duration_ms: 2.049525
+  type: 'test'
+  ...
+# Subtest: Export/import merge preserves original storage and does not delete existing history
+ok 56 - Export/import merge preserves original storage and does not delete existing history
+  ---
+  duration_ms: 3.53395
+  type: 'test'
+  ...
+# Subtest: Import rejects invalid data and never changes existing records
+ok 57 - Import rejects invalid data and never changes existing records
+  ---
+  duration_ms: 1.636714
+  type: 'test'
+  ...
+# Subtest: Import accepts legacy v1.0.3 stored shape as Exact protected URLs
+ok 58 - Import accepts legacy v1.0.3 stored shape as Exact protected URLs
+  ---
+  duration_ms: 1.379236
+  type: 'test'
+  ...
+# Subtest: v1.0.9 records automatic deletions by local day without collecting URLs
+ok 59 - v1.0.9 records automatic deletions by local day without collecting URLs
+  ---
+  duration_ms: 1.775172
+  type: 'test'
+  ...
+# Subtest: v1.0.9 tracks Clean Now separately and counts URLs rather than visits
+ok 60 - v1.0.9 tracks Clean Now separately and counts URLs rather than visits
+  ---
+  duration_ms: 1.831026
+  type: 'test'
+  ...
+# History Control: Auto Delete failed Error: synthetic deletion failure
+#     at f.browser.history.deleteUrl (/mnt/data/history-control-listed-v1.1.0/tests/background.test.js:1247:38)
+#     at background.js:971:29
+# History Control: Clean Now failed Error: synthetic deletion failure
+#     at f.browser.history.deleteUrl (/mnt/data/history-control-listed-v1.1.0/tests/background.test.js:1247:38)
+#     at background.js:926:39
+#     at Function.from (<anonymous>)
+#     at performCleanNow (background.js:922:33)
+# Subtest: v1.0.9 does not count unsuccessful deletion calls
+ok 61 - v1.0.9 does not count unsuccessful deletion calls
+  ---
+  duration_ms: 6.16489
+  type: 'test'
+  ...
+# Subtest: v1.0.9 serializes concurrent visit statistics writes and persists across reload
+ok 62 - v1.0.9 serializes concurrent visit statistics writes and persists across reload
+  ---
+  duration_ms: 4.986797
+  type: 'test'
+  ...
+# Subtest: v1.0.9 sanitizes malformed persisted statistics without affecting rules
+ok 63 - v1.0.9 sanitizes malformed persisted statistics without affecting rules
+  ---
+  duration_ms: 1.080606
+  type: 'test'
+  ...
+# Subtest: v1.0.9 Clean Now saves completed counts even when a later search fails
+ok 64 - v1.0.9 Clean Now saves completed counts even when a later search fails
+  ---
+  duration_ms: 16.381738
+  type: 'test'
+  ...
+# Subtest: v1.1.0 Full Backup contains all three rule sets and every daily aggregate
+ok 65 - v1.1.0 Full Backup contains all three rule sets and every daily aggregate
+  ---
+  duration_ms: 2.458571
+  type: 'test'
+  ...
+# Subtest: v1.1.0 Full Backup restores all rules, stats, and does not delete unrelated History
+ok 66 - v1.1.0 Full Backup restores all rules, stats, and does not delete unrelated History
+  ---
+  duration_ms: 4.430108
+  type: 'test'
+  ...
+# Subtest: v1.1.0 invalid Full Backups cannot alter existing rules or statistics
+ok 67 - v1.1.0 invalid Full Backups cannot alter existing rules or statistics
+  ---
+  duration_ms: 4.350058
+  type: 'test'
+  ...
+# Subtest: v1.1.0 Full Backup restore replaces statistics and existing rules rather than merging
+ok 68 - v1.1.0 Full Backup restore replaces statistics and existing rules rather than merging
+  ---
+  duration_ms: 2.792975
+  type: 'test'
+  ...
+# Subtest: History Explorer counts full history across the 1,500-result query limit
+ok 69 - History Explorer counts full history across the 1,500-result query limit
+  ---
+  duration_ms: 54.318648
+  type: 'test'
+  ...
+# Subtest: Host drill-down sorts by visit count descending, supports last visit and 100-row paging
+ok 70 - Host drill-down sorts by visit count descending, supports last visit and 100-row paging
+  ---
+  duration_ms: 11.81508
+  type: 'test'
+  ...
+# Subtest: History Explorer does not silently show incomplete results when timestamps overflow
+ok 71 - History Explorer does not silently show incomplete results when timestamps overflow
+  ---
+  duration_ms: 12.117877
+  type: 'test'
+  ...
+# Subtest: History Explorer provides formal Traditional Chinese and filters on URL content
+ok 72 - History Explorer provides formal Traditional Chinese and filters on URL content
+  ---
+  duration_ms: 7.432249
+  type: 'test'
+  ...
+# Subtest: minimum URL count defaults to 2 and filters hosts without changing History
+ok 73 - minimum URL count defaults to 2 and filters hosts without changing History
+  ---
+  duration_ms: 7.363385
+  type: 'test'
+  ...
+# Subtest: minimum threshold applies after keyword filter and closes an excluded host detail
+ok 74 - minimum threshold applies after keyword filter and closes an excluded host detail
+  ---
+  duration_ms: 6.448264
+  type: 'test'
+  ...
+# Subtest: v1.0.9 changes the display version but retains the extension identity
+ok 75 - v1.0.9 changes the display version but retains the extension identity
+  ---
+  duration_ms: 0.972743
+  type: 'test'
+  ...
+# Subtest: wide Options content uses full window width and avoids forced row wrapping
+ok 76 - wide Options content uses full window width and avoids forced row wrapping
+  ---
+  duration_ms: 0.348334
+  type: 'test'
+  ...
+# Subtest: long URL text is permitted to wrap, but controls keep their own labels intact
+ok 77 - long URL text is permitted to wrap, but controls keep their own labels intact
+  ---
+  duration_ms: 0.306351
+  type: 'test'
+  ...
+# Subtest: narrow layout adapts to the content container and stacks the navigation
+ok 78 - narrow layout adapts to the content container and stacks the navigation
+  ---
+  duration_ms: 0.303136
+  type: 'test'
+  ...
+# Subtest: every locale contains all strings and manifest metadata is localized
+ok 79 - every locale contains all strings and manifest metadata is localized
+  ---
+  duration_ms: 3.269077
+  type: 'test'
+  ...
+# Subtest: all t() and data-i18n keys are present in every locale
+ok 80 - all t() and data-i18n keys are present in every locale
+  ---
+  duration_ms: 1.518073
+  type: 'test'
+  ...
+# Subtest: Traditional Chinese labels use formal writing, no Cantonese or Simplified Chinese
+ok 81 - Traditional Chinese labels use formal writing, no Cantonese or Simplified Chinese
+  ---
+  duration_ms: 0.393983
+  type: 'test'
+  ...
+# Subtest: v1.1.0 Full Backup UI and Firefox AMO manifest data disclosures are present
+ok 82 - v1.1.0 Full Backup UI and Firefox AMO manifest data disclosures are present
+  ---
+  duration_ms: 0.203917
+  type: 'test'
+  ...
+# Subtest: left navigation has eight sections and labels in every locale
+ok 83 - left navigation has eight sections and labels in every locale
+  ---
+  duration_ms: 3.161395
+  type: 'test'
+  ...
+# Subtest: selecting a section hides all other panels without reloading or mutating settings
+ok 84 - selecting a section hides all other panels without reloading or mutating settings
+  ---
+  duration_ms: 1.832045
+  type: 'test'
+  ...
+# Subtest: small viewport provides collapsible menu and selection returns focus to toggle
+ok 85 - small viewport provides collapsible menu and selection returns focus to toggle
+  ---
+  duration_ms: 0.629997
+  type: 'test'
+  ...
+# Subtest: all UI labels referenced by options HTML exist in each locale and no colloquial Chinese
+ok 86 - all UI labels referenced by options HTML exist in each locale and no colloquial Chinese
+  ---
+  duration_ms: 2.27447
+  type: 'test'
+  ...
+# Subtest: no protected rules disables Clean Now
+ok 87 - no protected rules disables Clean Now
+  ---
+  duration_ms: 10.768637
+  type: 'test'
+  ...
+# Subtest: Options follow zh-TW Firefox locale, with traditional written Chinese
+ok 88 - Options follow zh-TW Firefox locale, with traditional written Chinese
+  ---
+  duration_ms: 1.96821
+  type: 'test'
+  ...
+# Subtest: manually adding a prefix URL enables Keep All mode and lists new rule
+ok 89 - manually adding a prefix URL enables Keep All mode and lists new rule
+  ---
+  duration_ms: 3.695588
+  type: 'test'
+  ...
+# Subtest: per-URL editor updates prefix mode then saves to backend
+ok 90 - per-URL editor updates prefix mode then saves to backend
+  ---
+  duration_ms: 2.445137
+  type: 'test'
+  ...
+# Subtest: switching Exact mode hides Keep All choice and submits entry-only
+ok 91 - switching Exact mode hides Keep All choice and submits entry-only
+  ---
+  duration_ms: 1.518624
+  type: 'test'
+  ...
+# Subtest: Options preserve remove-one behavior with three URLs on the same domain
+ok 92 - Options preserve remove-one behavior with three URLs on the same domain
+  ---
+  duration_ms: 2.369013
+  type: 'test'
+  ...
+# Subtest: zh-CN UI locale falls back to English (no Simplified Chinese)
+ok 93 - zh-CN UI locale falls back to English (no Simplified Chinese)
+  ---
+  duration_ms: 2.874895
+  type: 'test'
+  ...
+# Subtest: No History form defaults to including subdomains and enables Clean Now by itself
+ok 94 - No History form defaults to including subdomains and enables Clean Now by itself
+  ---
+  duration_ms: 2.567342
+  type: 'test'
+  ...
+# Subtest: No History conflict asks confirmation with affected protected entry before saving
+ok 95 - No History conflict asks confirmation with affected protected entry before saving
+  ---
+  duration_ms: 2.602485
+  type: 'test'
+  ...
+# Subtest: No History rule can be edited to exclude only the apex and removed
+ok 96 - No History rule can be edited to exclude only the apex and removed
+  ---
+  duration_ms: 2.470145
+  type: 'test'
+  ...
+# Subtest: No History conflicts remain visible in both protected and excluded lists
+ok 97 - No History conflicts remain visible in both protected and excluded lists
+  ---
+  duration_ms: 3.459544
+  type: 'test'
+  ...
+# Subtest: Host Entry form allows a blank entry URL and includes subdomains by default
+ok 98 - Host Entry form allows a blank entry URL and includes subdomains by default
+  ---
+  duration_ms: 2.027309
+  type: 'test'
+  ...
+# Subtest: Host Entry editing, subdomain toggle and individual removal work in Options
+ok 99 - Host Entry editing, subdomain toggle and individual removal work in Options
+  ---
+  duration_ms: 2.087439
+  type: 'test'
+  ...
+# Subtest: No site-name examples appear in input field placeholders of either locale
+ok 100 - No site-name examples appear in input field placeholders of either locale
+  ---
+  duration_ms: 0.708296
+  type: 'test'
+  ...
+# Subtest: manifest contains the one-click popup and locale metadata
+ok 101 - manifest contains the one-click popup and locale metadata
+  ---
+  duration_ms: 1.458253
+  type: 'test'
+  ...
+# Subtest: first toolbar click saves current exact URL and keeps Options available
+ok 102 - first toolbar click saves current exact URL and keeps Options available
+  ---
+  duration_ms: 7.358819
+  type: 'test'
+  ...
+# Subtest: existing exact rule produces Done-style confirmation, without another action
+ok 103 - existing exact rule produces Done-style confirmation, without another action
+  ---
+  duration_ms: 1.037491
+  type: 'test'
+  ...
+# Subtest: prefix matched child displays Entry Only state and still opens Options
+ok 104 - prefix matched child displays Entry Only state and still opens Options
+  ---
+  duration_ms: 1.184051
+  type: 'test'
+  ...
+# Subtest: prefix Keep All shows History retained in English
+ok 105 - prefix Keep All shows History retained in English
+  ---
+  duration_ms: 1.059654
+  type: 'test'
+  ...
+# Subtest: English fallback is used for unsupported browser locale, never Simplified Chinese
+ok 106 - English fallback is used for unsupported browser locale, never Simplified Chinese
+  ---
+  duration_ms: 1.553367
+  type: 'test'
+  ...
+# Subtest: popup provides visible errors and handles missing tab
+ok 107 - popup provides visible errors and handles missing tab
+  ---
+  duration_ms: 2.858869
+  type: 'test'
+  ...
+# Subtest: No History popup shows excluded state and still opens Options
+ok 108 - No History popup shows excluded state and still opens Options
+  ---
+  duration_ms: 1.132313
+  type: 'test'
+  ...
+# Subtest: Host Entry retained URL is shown as saved with an Options entry
+ok 109 - Host Entry retained URL is shown as saved with an Options entry
+  ---
+  duration_ms: 1.781649
+  type: 'test'
+  ...
+# Subtest: Host Entry covered subpages display deletion state, without auto-saving
+ok 110 - Host Entry covered subpages display deletion state, without auto-saving
+  ---
+  duration_ms: 1.267376
+  type: 'test'
+  ...
+# Subtest: v1.0.9 Statistics sidebar and all messages exist in both languages
+ok 111 - v1.0.9 Statistics sidebar and all messages exist in both languages
+  ---
+  duration_ms: 4.863325
+  type: 'test'
+  ...
+# Subtest: v1.0.9 daily summary counts auto and Clean Now independently
+ok 112 - v1.0.9 daily summary counts auto and Clean Now independently
+  ---
+  duration_ms: 26.734891
+  type: 'test'
+  ...
+# Subtest: v1.0.9 date ranges cross month and daylight saving time using calendar days
+ok 113 - v1.0.9 date ranges cross month and daylight saving time using calendar days
+  ---
+  duration_ms: 2.624061
+  type: 'test'
+  ...
+# Subtest: v1.0.9 clicking Statistics and Refresh fetches updated data
+ok 114 - v1.0.9 clicking Statistics and Refresh fetches updated data
+  ---
+  duration_ms: 3.486478
+  type: 'test'
+  ...
+1..114
+# tests 114
+# suites 0
+# pass 114
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 501.323948

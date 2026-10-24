@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+:root { color-scheme: light dark; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+body { width: 320px; margin: 0; color: #1d2935; background: #fff; font-size: 14px; }
+.popup-shell { padding: 16px; }
+header { display: flex; gap: 10px; align-items: center; }
+header img { flex: 0 0 auto; }
+h1 { font-size: 16px; line-height: 1.3; margin: 0 0 4px; }
+.subheading, .hint { color: #66717e; font-size: 12px; }
+.result { border-radius: 10px; padding: 12px; margin: 16px 0 10px; background: #f0f3f6; border: 1px solid #d5dce3; }
+.result.saved { background: #ebf8f1; border-color: #7cc5a2; }
+.result.error { background: #fff2f2; border-color: #ecacac; }
+#status { font-weight: 700; }
+.result.saved #status { color: #0d6b4b; }
+.result.error #status { color: #a12626; }
+#site-host { display: block; margin-top: 7px; overflow-wrap: anywhere; }
+#site-url { display: block; font-size: 11px; margin-top: 5px; overflow-wrap: anywhere; color: #586472; }
+.hint { margin: 0 0 14px; line-height: 1.55; }
+button { display: block; width: 100%; border: 1px solid #acb5bf; border-radius: 8px; color: #273644; background: #fff; padding: 9px; cursor: pointer; font: inherit; }
+button:hover { background: #f4f6f8; }
+button:focus-visible { outline: 2px solid #0969da; outline-offset: 2px; }
+@media (prefers-color-scheme: dark) {
+  body { background: #20252b; color: #f1f3f5; }
+  .subheading, .hint { color: #b2bbc5; }
+  .result { background: #2b3138; border-color: #56606a; }
+  .result.saved { background: #1b382c; border-color: #478d6a; }
+  .result.error { background: #432828; border-color: #995a5a; }
+  .result.saved #status { color: #86deb0; }
+  .result.error #status { color: #f6aaa9; }
+  #site-url { color: #c1c8d0; }
+  button { background: #333a43; color: #f1f3f5; border-color: #717983; }
+  button:hover { background: #424b55; }
+}
+.rule-note { margin-top: 8px; font-size: 11px; color: #355b4b; overflow-wrap: anywhere; }
+@media (prefers-color-scheme: dark) { .rule-note { color: #acd7c2; } }
+
+.result.excluded { background: #fff4f5; border-color: #dc9aa9; }
+.result.excluded #status { color: #a91b36; }
+@media (prefers-color-scheme: dark) {
+  .result.excluded { background: #422b31; border-color: #9e6471; }
+  .result.excluded #status { color: #ffa9b4; }
+}

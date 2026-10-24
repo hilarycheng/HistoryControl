@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>History Control</title>
+  <link rel="stylesheet" href="options.css">
+  <script src="options.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <img src="icons/saved.svg" width="42" height="42" alt="">
+      <div>
+        <h1>History Control</h1>
+        <p data-i18n="optionsDescription"></p>
+      </div>
+    </header>
+
+    <div class="options-layout">
+      <aside class="navigation" aria-labelledby="nav-heading">
+        <div class="navigation-header">
+          <h2 id="nav-heading" data-i18n="navTitle"></h2>
+          <button type="button" id="nav-toggle" class="nav-toggle quiet" data-i18n="navToggle"
+                  aria-controls="nav-items" aria-expanded="false"></button>
+        </div>
+        <nav class="nav-items" id="nav-items" aria-labelledby="nav-heading">
+          <button type="button" class="nav-item" data-section-target="overview" aria-controls="section-overview" data-i18n="navOverview"></button>
+          <button type="button" class="nav-item" data-section-target="protected" aria-controls="section-protected" data-i18n="navProtected"></button>
+          <button type="button" class="nav-item" data-section-target="host-entry" aria-controls="section-host-entry" data-i18n="navHostEntry"></button>
+          <button type="button" class="nav-item" data-section-target="no-history" aria-controls="section-no-history" data-i18n="navNoHistory"></button>
+          <button type="button" class="nav-item" data-section-target="explorer" aria-controls="section-explorer" data-i18n="navExplorer"></button>
+          <button type="button" class="nav-item" data-section-target="statistics" aria-controls="section-statistics" data-i18n="navStatistics"></button>
+          <button type="button" class="nav-item" data-section-target="backup" aria-controls="section-backup" data-i18n="navBackup"></button>
+          <button type="button" class="nav-item" data-section-target="cleanup" aria-controls="section-cleanup" data-i18n="navCleanup"></button>
+        </nav>
+      </aside>
+      <div class="options-content">
+    <section class="panel" id="section-overview" data-history-section="overview" aria-labelledby="how-heading">
+      <div class="section-top">
+        <h2 id="how-heading" data-i18n="howTitle"></h2>
+        <span class="pill" data-i18n="howPill"></span>
+      </div>
+      <p data-i18n="howStep1"></p>
+      <p class="small" data-i18n="howStep2"></p>
+    </section>
+
+    <div id="section-protected" data-history-section="protected" hidden>
+    <section class="panel" aria-labelledby="add-heading">
+      <h2 id="add-heading" data-i18n="addTitle"></h2>
+      <p class="small" data-i18n="addDescription"></p>
+      <form id="add-form" class="add-form">
+        <label for="add-url" data-i18n="fieldUrl"></label>
+        <input id="add-url" type="url" required autocomplete="off" spellcheck="false" />
+        <div class="fields">
+          <div class="field">
+            <label for="add-match-mode" data-i18n="fieldMatchMode"></label>
+            <select id="add-match-mode">
+              <option value="exact" data-i18n="modeExact"></option>
+              <option value="prefix" data-i18n="modePrefix"></option>
+            </select>
+          </div>
+          <div class="field" id="add-history-row">
+            <label for="add-history-mode" data-i18n="fieldHistoryMode"></label>
+            <select id="add-history-mode">
+              <option value="entry" data-i18n="historyEntry"></option>
+              <option value="all" data-i18n="historyAll"></option>
+            </select>
+          </div>
+        </div>
+        <p id="add-mode-help" class="small" data-i18n="helpExact"></p>
+        <button type="submit" id="add-button" class="primary" data-i18n="addButton"></button>
+      </form>
+      <p id="add-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="protected-heading">
+      <div class="section-top">
+        <h2 id="protected-heading"><span data-i18n="listTitle"></span> <span id="count" class="count">0</span></h2>
+        <button type="button" id="refresh" class="quiet" data-i18n="refresh"></button>
+      </div>
+      <ul id="site-list" class="site-list" aria-live="polite"></ul>
+      <p id="empty-message" class="empty" data-i18n="listEmpty" hidden></p>
+      <p class="small" data-i18n="listHelp"></p>
+    </section>
+
+    </div>
+
+    <section class="panel" id="section-host-entry" data-history-section="host-entry" aria-labelledby="host-entry-heading" hidden>
+      <div class="section-top">
+        <h2 id="host-entry-heading" data-i18n="hostEntryTitle"></h2>
+        <span class="pill" data-i18n="hostEntryPill"></span>
+      </div>
+      <p class="small" data-i18n="hostEntryDescription"></p>
+      <form id="host-entry-form" class="add-form">
+        <label for="host-entry-hostname" data-i18n="fieldHostname"></label>
+        <input id="host-entry-hostname" type="text" required autocomplete="off" spellcheck="false" />
+        <label for="host-entry-url" data-i18n="hostEntryUrlLabel"></label>
+        <input id="host-entry-url" type="url" autocomplete="off" spellcheck="false" />
+        <p class="small" data-i18n="hostEntryOptionalUrl"></p>
+        <label class="check-row" for="host-entry-subdomains">
+          <input id="host-entry-subdomains" type="checkbox" checked />
+          <span data-i18n="includeSubdomains"></span>
+        </label>
+        <button type="submit" class="primary" id="host-entry-add" data-i18n="hostEntryAdd"></button>
+      </form>
+      <p id="host-entry-status" class="status" role="status" aria-live="polite"></p>
+      <h3 class="exclude-list-heading"><span data-i18n="hostEntryList"></span> <span id="host-entry-count" class="count">0</span></h3>
+      <ul id="host-entry-list" class="site-list" aria-live="polite"></ul>
+      <p id="host-entry-empty" class="empty" data-i18n="hostEntryEmpty" hidden></p>
+    </section>
+
+    <section class="panel" id="section-no-history" data-history-section="no-history" aria-labelledby="exclude-heading" hidden>
+      <div class="section-top">
+        <h2 id="exclude-heading" data-i18n="excludeTitle"></h2>
+        <span class="pill excluded-pill" data-i18n="excludePill"></span>
+      </div>
+      <p class="small" data-i18n="excludeDescription"></p>
+      <form id="exclude-form" class="add-form">
+        <label for="exclude-hostname" data-i18n="fieldHostname"></label>
+        <input id="exclude-hostname" type="text" required autocomplete="off" spellcheck="false" />
+        <label class="check-row" for="exclude-subdomains">
+          <input id="exclude-subdomains" type="checkbox" checked />
+          <span data-i18n="includeSubdomains"></span>
+        </label>
+        <button type="submit" id="exclude-add-button" class="primary" data-i18n="excludeAddButton"></button>
+      </form>
+      <p id="exclude-status" class="status" role="status" aria-live="polite"></p>
+      <div class="section-top exclude-list-heading">
+        <h3><span data-i18n="excludeListTitle"></span> <span id="exclude-count" class="count">0</span></h3>
+      </div>
+      <ul id="exclude-list" class="site-list" aria-live="polite"></ul>
+      <p id="exclude-empty" class="empty" data-i18n="excludeEmpty" hidden></p>
+      <p class="small" data-i18n="excludeHelp"></p>
+    </section>
+
+    <section class="panel" id="section-backup" data-history-section="backup" aria-labelledby="backup-heading" hidden>
+      <h2 id="backup-heading" data-i18n="backupTitle"></h2>
+      <p class="small" data-i18n="backupDescription"></p>
+      <div class="button-line">
+        <button type="button" id="export-button" class="quiet" data-i18n="exportButton"></button>
+        <label class="file-picker" for="import-file" data-i18n="importChoose"></label>
+        <input id="import-file" type="file" accept="application/json,.json" />
+      </div>
+      <div class="button-line">
+        <label for="import-mode" data-i18n="importModeLabel"></label>
+        <select id="import-mode">
+          <option value="merge" data-i18n="importMerge"></option>
+          <option value="replace" data-i18n="importReplace"></option>
+        </select>
+        <button type="button" id="import-button" class="primary" data-i18n="importButton"></button>
+      </div>
+      <p id="backup-status" class="status" role="status" aria-live="polite"></p>
+      <div class="full-backup" role="group" aria-labelledby="full-backup-heading">
+        <h3 id="full-backup-heading" data-i18n="fullBackupTitle"></h3>
+        <p class="small" data-i18n="fullBackupDescription"></p>
+        <div class="button-line">
+          <button type="button" id="full-export-button" class="quiet" data-i18n="fullBackupExport"></button>
+          <label for="full-import-file" data-i18n="fullBackupChoose"></label>
+          <input id="full-import-file" type="file" accept="application/json,.json" />
+          <button type="button" id="full-import-button" class="primary" data-i18n="fullBackupRestore"></button>
+        </div>
+        <p id="full-backup-status" class="status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="panel" id="section-explorer" data-history-section="explorer" aria-labelledby="explorer-heading" hidden>
+      <h2 id="explorer-heading" data-i18n="explorerTitle"></h2>
+      <p class="small" data-i18n="explorerDescription"></p>
+      <div class="button-line">
+        <button id="explorer-scan" type="button" class="primary" data-i18n="explorerScan"></button>
+        <button id="explorer-cancel" type="button" class="quiet" data-i18n="explorerCancel" hidden></button>
+        <span id="explorer-progress" class="small" role="status" aria-live="polite"></span>
+      </div>
+      <div class="explorer-controls">
+        <div class="explorer-control">
+          <label for="explorer-filter" data-i18n="explorerFilterLabel"></label>
+          <input id="explorer-filter" type="search" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="explorer-control">
+          <label for="explorer-min-urls" data-i18n="explorerMinUrlsLabel"></label>
+          <input id="explorer-min-urls" type="number" min="0" step="1" value="2" inputmode="numeric" />
+        </div>
+        <div class="explorer-control">
+          <label for="explorer-sort" data-i18n="explorerSortHosts"></label>
+          <select id="explorer-sort">
+            <option value="urls" data-i18n="explorerSortUrls"></option>
+            <option value="visits" data-i18n="explorerSortVisits"></option>
+          </select>
+        </div>
+      </div>
+      <p class="small explorer-filter-help" data-i18n="explorerMinUrlsHelp"></p>
+      <div id="explorer-hosts">
+        <p id="explorer-summary" class="small"></p>
+        <p id="explorer-empty" class="empty" data-i18n="explorerNoHosts" hidden></p>
+        <div class="table-wrap">
+          <table class="history-table">
+            <thead><tr><th data-i18n="explorerColHostname"></th><th data-i18n="explorerColUrls"></th><th data-i18n="explorerColVisits"></th></tr></thead>
+            <tbody id="explorer-host-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <div id="explorer-detail" hidden>
+        <button id="explorer-back" type="button" class="quiet" data-i18n="explorerBack"></button>
+        <h3 id="explorer-detail-title"></h3>
+        <div class="button-line">
+          <label for="explorer-url-sort" data-i18n="explorerSortUrlLabel"></label>
+          <select id="explorer-url-sort">
+            <option value="visits" data-i18n="explorerSortVisits"></option>
+            <option value="last" data-i18n="explorerSortLast"></option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="history-table">
+            <thead><tr><th data-i18n="explorerColUrl"></th><th data-i18n="explorerColVisits"></th><th data-i18n="explorerColLast"></th></tr></thead>
+            <tbody id="explorer-url-body"></tbody>
+          </table>
+        </div>
+        <button id="explorer-more" type="button" class="quiet" data-i18n="explorerMore" hidden></button>
+      </div>
+      <p class="small" data-i18n="explorerNotes"></p>
+    </section>
+
+    <section class="panel" id="section-statistics" data-history-section="statistics" aria-labelledby="statistics-heading" hidden>
+      <div class="section-top">
+        <h2 id="statistics-heading" data-i18n="statsTitle"></h2>
+        <button type="button" class="quiet" id="stats-refresh" data-i18n="statsRefresh"></button>
+      </div>
+      <p class="small" data-i18n="statsDescription"></p>
+      <p class="small" id="stats-status" role="status" aria-live="polite"></p>
+      <div class="stats-summary" role="group" aria-labelledby="statistics-heading">
+        <div class="stats-summary-item"><div data-i18n="statsTodayAuto"></div><strong id="stats-today-auto">0</strong></div>
+        <div class="stats-summary-item"><div data-i18n="statsSevenAuto"></div><strong id="stats-seven-auto">0</strong></div>
+        <div class="stats-summary-item"><div data-i18n="statsThirtyAuto"></div><strong id="stats-thirty-auto">0</strong></div>
+        <div class="stats-summary-item"><div data-i18n="statsThirtyManual"></div><strong id="stats-thirty-manual">0</strong></div>
+      </div>
+      <h3 class="stats-table-heading" data-i18n="statsDailyHeading"></h3>
+      <div class="table-wrap">
+        <table class="history-table stats-table">
+          <thead><tr>
+            <th scope="col" data-i18n="statsDateCol"></th>
+            <th scope="col" data-i18n="statsAutoCol"></th>
+            <th scope="col" data-i18n="statsManualCol"></th>
+          </tr></thead>
+          <tbody id="stats-daily-body"></tbody>
+        </table>
+      </div>
+      <p class="small stats-note" data-i18n="statsNotes"></p>
+    </section>
+
+    <section class="panel danger" id="section-cleanup" data-history-section="cleanup" aria-labelledby="clean-heading" hidden>
+      <h2 id="clean-heading" data-i18n="cleanTitle"></h2>
+      <p data-i18n="cleanDescription"></p>
+      <p class="small" data-i18n="cleanDetails"></p>
+      <button type="button" id="clean" class="danger-button" data-i18n="cleanButton"></button>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+      </div>
+    </div>
+    <footer data-i18n="footer"></footer>
+  </main>
+  <script src="history-explorer.js" defer></script>
+  <script src="navigation.js" defer></script>
+  <script src="statistics.js" defer></script>
+</body>
+</html>

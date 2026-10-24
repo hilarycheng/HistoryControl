@@ -1,0 +1,623 @@
+{
+  "extensionName": {
+    "message": "History Control"
+  },
+  "extensionDescription": {
+    "message": "Keep selected URL entries, clean configured hostnames, and browse History statistics."
+  },
+  "toolbarDefault": {
+    "message": "Protect the current URL"
+  },
+  "toolbarUnsupported": {
+    "message": "This page cannot be protected. Open an HTTP or HTTPS website."
+  },
+  "toolbarUnsaved": {
+    "message": "Click to protect:"
+  },
+  "toolbarProtected": {
+    "message": "Protected URL:"
+  },
+  "toolbarMatchedEntryOnly": {
+    "message": "Matched: history is kept only for the entry point:"
+  },
+  "menuManage": {
+    "message": "Manage History Rules / Clean Now…"
+  },
+  "errorInvalidUrl": {
+    "message": "Enter a valid full http:// or https:// URL."
+  },
+  "errorInvalidRule": {
+    "message": "Invalid matching or history rule."
+  },
+  "errorPaging": {
+    "message": "Could not safely paginate History results."
+  },
+  "errorCleanLimit": {
+    "message": "Too many results for one cleanup. Run Clean Now again."
+  },
+  "popupPageTitle": {
+    "message": "History Control — Rules"
+  },
+  "popupSubtitle": {
+    "message": "Click once to protect or inspect the current URL"
+  },
+  "popupLoading": {
+    "message": "Checking the current URL…"
+  },
+  "popupNoTab": {
+    "message": "No active tab was found. Open a website and try again."
+  },
+  "popupUnsupported": {
+    "message": "This page cannot be protected. Open an HTTP or HTTPS website."
+  },
+  "popupSaved": {
+    "message": "✓ URL saved"
+  },
+  "popupAlreadyProtected": {
+    "message": "✓ Already protected"
+  },
+  "popupMatchedAll": {
+    "message": "✓ Matches a protected rule — History retained"
+  },
+  "popupMatchedEntryOnly": {
+    "message": "✓ Matches a protected rule — entry point only"
+  },
+  "popupHint": {
+    "message": "Only configured hosts are cleaned. No History takes priority over Host Entry, then Protected URLs. All other sites stay untouched."
+  },
+  "popupManage": {
+    "message": "Open Options"
+  },
+  "popupError": {
+    "message": "Unable to protect URL:"
+  },
+  "popupOptionsError": {
+    "message": "Unable to open Options:"
+  },
+  "popupRuleLabel": {
+    "message": "Matching rule:"
+  },
+  "pageTitle": {
+    "message": "History Control — Options"
+  },
+  "optionsDescription": {
+    "message": "Manage only the hosts and URL entries you specify. All other sites remain untouched."
+  },
+  "howTitle": {
+    "message": "How it works"
+  },
+  "howPill": {
+    "message": "Auto Delete: configured hosts only"
+  },
+  "howStep1": {
+    "message": "Use the toolbar to protect the current URL, or add Protected URL, Host Entry, or No History rules in Options."
+  },
+  "howStep2": {
+    "message": "No History deletes all matching visits. Keep Host Entry Only retains one URL and removes other visits on that hostname or its selected subdomains. Protected URL rules work as before."
+  },
+  "addTitle": {
+    "message": "Add Protected URL"
+  },
+  "addDescription": {
+    "message": "Enter a complete URL and choose how it should match. Query strings and fragments are excluded from saved entry points."
+  },
+  "fieldUrl": {
+    "message": "URL"
+  },
+  "urlPlaceholder": {
+    "message": "Enter a complete URL"
+  },
+  "fieldMatchMode": {
+    "message": "Matching Mode"
+  },
+  "modeExact": {
+    "message": "Exact Match"
+  },
+  "modePrefix": {
+    "message": "Path Prefix Match"
+  },
+  "fieldHistoryMode": {
+    "message": "History Behavior"
+  },
+  "historyEntry": {
+    "message": "Keep Entry Point Only"
+  },
+  "historyAll": {
+    "message": "Keep All Matched URLs"
+  },
+  "helpExact": {
+    "message": "Exact matches only the saved path. Only its canonical entry URL is kept in History."
+  },
+  "helpPrefix": {
+    "message": "Prefix matches the path and descendants (e.g. /g/ also matches /g/abc, but not /games)."
+  },
+  "helpEntry": {
+    "message": "Save the entry URL; automatically delete descendant History."
+  },
+  "helpAll": {
+    "message": "Keep every matching descendant URL in Firefox History."
+  },
+  "addButton": {
+    "message": "Add Protected URL"
+  },
+  "addSuccess": {
+    "message": "Added protected URL:"
+  },
+  "addExists": {
+    "message": "This path is already protected. Edit the existing rule below:"
+  },
+  "addError": {
+    "message": "Unable to add URL:"
+  },
+  "listTitle": {
+    "message": "Protected URLs"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "listEmpty": {
+    "message": "No protected URLs yet. Use the toolbar icon or the form above."
+  },
+  "listHelp": {
+    "message": "Each URL has its own rule. Removing a rule does not immediately erase History. Removing the last rule for a host stops cleanup on that host."
+  },
+  "editSave": {
+    "message": "Save Rule"
+  },
+  "editSaved": {
+    "message": "Updated rule:"
+  },
+  "editError": {
+    "message": "Unable to update rule:"
+  },
+  "remove": {
+    "message": "Remove"
+  },
+  "removeConfirm": {
+    "message": "Remove protection for this URL? History is not deleted immediately:"
+  },
+  "removeSaved": {
+    "message": "Removed protection for:"
+  },
+  "removeError": {
+    "message": "Unable to remove protection:"
+  },
+  "listError": {
+    "message": "Unable to load protected URLs:"
+  },
+  "cleanTitle": {
+    "message": "Clean Now"
+  },
+  "cleanDescription": {
+    "message": "Remove unprotected URL records under configured Protected URL hosts, remove all but the saved Host Entry URL for configured hostname scopes, and delete all No History matches. Unrelated hosts remain untouched. Cannot be undone."
+  },
+  "cleanDetails": {
+    "message": "Bookmarks, cookies and downloads are not removed."
+  },
+  "cleanButton": {
+    "message": "Clean Configured History"
+  },
+  "cleanEmpty": {
+    "message": "No Protected URL, Host Entry, or No History rules. Nothing to clean."
+  },
+  "cleanConfirm": {
+    "message": "Clean the configured hosts now? Only selected hosts will be affected. No History takes priority over Host Entry and Protected URL rules. This cannot be undone."
+  },
+  "cleanProgress": {
+    "message": "Cleaning configured-host History… Keep this page open."
+  },
+  "cleanSuccess": {
+    "message": "Cleanup completed. Deleted URL records:"
+  },
+  "cleanSavedCount": {
+    "message": "Saved entry points:"
+  },
+  "cleanFailure": {
+    "message": "Some URL records could not be deleted:"
+  },
+  "cleanError": {
+    "message": "Cleanup did not complete:"
+  },
+  "footer": {
+    "message": "Firefox writes visits before extensions can remove them. No History means prompt deletion, not prevention of writing."
+  },
+  "toolbarExcluded": {
+    "message": "No History — automatically delete visits on:"
+  },
+  "errorInvalidHostname": {
+    "message": "Enter a valid hostname without a path, port, wildcard or credentials."
+  },
+  "popupExcluded": {
+    "message": "× No History — visits will be deleted"
+  },
+  "excludeTitle": {
+    "message": "No History — Hostname Match"
+  },
+  "excludePill": {
+    "message": "All matching URLs deleted"
+  },
+  "excludeDescription": {
+    "message": "Delete all History on a hostname, optionally including every level of subdomain. Even saved Protected URL entries are not retained. Existing visits are removed with Clean Now."
+  },
+  "fieldHostname": {
+    "message": "Hostname"
+  },
+  "hostnamePlaceholder": {
+    "message": "Enter a hostname"
+  },
+  "includeSubdomains": {
+    "message": "Include all subdomains"
+  },
+  "onlyHostname": {
+    "message": "Exact hostname only"
+  },
+  "excludeAddButton": {
+    "message": "Add No History Rule"
+  },
+  "excludeListTitle": {
+    "message": "No History Hostnames"
+  },
+  "excludeEmpty": {
+    "message": "No No History rules yet."
+  },
+  "excludeHelp": {
+    "message": "An excluded hostname takes precedence over Protected URLs. Turn subdomains on or off per rule. Removing an exclusion does not restore previously deleted browsing History."
+  },
+  "excludeConflictTag": {
+    "message": "Overrides protected entries"
+  },
+  "conflictBadge": {
+    "message": "Overridden by No History"
+  },
+  "excludeConflictConfirm": {
+    "message": "This No History rule matches protected entry points listed below. Those entries will no longer be retained and Clean Now will delete their History. Continue?"
+  },
+  "excludeAdded": {
+    "message": "Added No History rule:"
+  },
+  "excludeExists": {
+    "message": "Hostname already has a No History rule. Edit the existing entry:"
+  },
+  "excludeUpdated": {
+    "message": "Updated No History rule:"
+  },
+  "excludeRemoved": {
+    "message": "Removed No History rule:"
+  },
+  "excludeRemoveConfirm": {
+    "message": "Remove No History for this hostname? New visits will no longer be deleted by this rule:"
+  },
+  "excludeError": {
+    "message": "Unable to save No History rule:"
+  },
+  "toolbarHostEntrySaved": {
+    "message": "Kept Host Entry:"
+  },
+  "toolbarHostEntryClean": {
+    "message": "Host Entry rule: History is cleared for:"
+  },
+  "popupHostEntrySaved": {
+    "message": "✓ Host entry retained"
+  },
+  "popupHostEntryClean": {
+    "message": "× Host matched — only the entry URL is retained"
+  },
+  "hostEntryTitle": {
+    "message": "Keep Host Entry Only"
+  },
+  "hostEntryPill": {
+    "message": "One URL kept"
+  },
+  "hostEntryDescription": {
+    "message": "Keep exactly one entry URL. Remove other History on this hostname and, optionally, all its subdomains. No History still takes priority."
+  },
+  "hostEntryUrlLabel": {
+    "message": "Entry URL (optional)"
+  },
+  "hostEntryUrlPlaceholder": {
+    "message": "Enter the URL to keep"
+  },
+  "hostEntryOptionalUrl": {
+    "message": "Leave blank to keep the HTTPS homepage of this hostname."
+  },
+  "hostEntryAdd": {
+    "message": "Add Host Entry Rule"
+  },
+  "hostEntryList": {
+    "message": "Host Entry Rules"
+  },
+  "hostEntryEmpty": {
+    "message": "No Host Entry rules yet."
+  },
+  "hostEntryAdded": {
+    "message": "Added Host Entry rule:"
+  },
+  "hostEntryExists": {
+    "message": "Hostname already has a Host Entry rule. Edit it below:"
+  },
+  "hostEntryUpdated": {
+    "message": "Updated Host Entry rule:"
+  },
+  "hostEntryRemoved": {
+    "message": "Removed Host Entry rule:"
+  },
+  "hostEntryError": {
+    "message": "Unable to save Host Entry rule:"
+  },
+  "hostEntryRemoveConfirm": {
+    "message": "Remove this Host Entry rule? Previously deleted History is not restored:"
+  },
+  "hostEntryConflictTag": {
+    "message": "Overlapping rules"
+  },
+  "hostEntryConflictConfirm": {
+    "message": "This Host Entry rule overlaps existing rules. No History always takes priority. Protected URLs under this host may be cleared. Continue?"
+  },
+  "errorInvalidHostEntry": {
+    "message": "Entry URL must be an HTTP(S) URL within the selected hostname scope."
+  },
+  "backupTitle": {
+    "message": "Export / Import Rules"
+  },
+  "backupDescription": {
+    "message": "Export a local JSON backup of rules only (not browsing History). Imported settings can contain sensitive saved URLs. Import does not run Clean Now."
+  },
+  "exportButton": {
+    "message": "Export Settings (JSON)"
+  },
+  "importChoose": {
+    "message": "Choose JSON file"
+  },
+  "importModeLabel": {
+    "message": "Import Mode"
+  },
+  "importMerge": {
+    "message": "Merge — keep existing on duplicates"
+  },
+  "importReplace": {
+    "message": "Replace — overwrite all rules"
+  },
+  "importButton": {
+    "message": "Import Settings"
+  },
+  "exportSuccess": {
+    "message": "Settings export initiated."
+  },
+  "exportError": {
+    "message": "Export failed:"
+  },
+  "importNoFile": {
+    "message": "Choose a JSON file first."
+  },
+  "importTooLarge": {
+    "message": "Settings file or rule set is too large."
+  },
+  "importInvalid": {
+    "message": "Invalid or inconsistent settings file. Nothing was imported."
+  },
+  "importUnsupported": {
+    "message": "Unsupported settings backup version."
+  },
+  "importReplaceConfirm": {
+    "message": "Replace ALL existing rules with the selected file? This cannot be undone. Export a backup first."
+  },
+  "importMergeConfirm": {
+    "message": "Merge rules from this file? Existing duplicates will remain unchanged."
+  },
+  "importSuccess": {
+    "message": "Import completed."
+  },
+  "importAdded": {
+    "message": "Added"
+  },
+  "importSkipped": {
+    "message": "Skipped duplicates"
+  },
+  "importError": {
+    "message": "Import failed:"
+  },
+  "explorerTitle": {
+    "message": "History Explorer"
+  },
+  "explorerDescription": {
+    "message": "Inspect existing Firefox History. Filter URL/hostname, rank hostnames and select a hostname to view its URL list."
+  },
+  "explorerScan": {
+    "message": "Analyze History"
+  },
+  "explorerCancel": {
+    "message": "Cancel"
+  },
+  "explorerFilterLabel": {
+    "message": "Filter by hostname or URL"
+  },
+  "explorerFilterPlaceholder": {
+    "message": "Enter search terms"
+  },
+  "explorerSortHosts": {
+    "message": "Sort Hosts"
+  },
+  "explorerSortUrls": {
+    "message": "URL Count ↓"
+  },
+  "explorerSortVisits": {
+    "message": "Visit Count ↓"
+  },
+  "explorerSortLast": {
+    "message": "Last Visit ↓"
+  },
+  "explorerColHostname": {
+    "message": "Hostname"
+  },
+  "explorerColUrls": {
+    "message": "URLs"
+  },
+  "explorerColVisits": {
+    "message": "Visits"
+  },
+  "explorerColUrl": {
+    "message": "URL"
+  },
+  "explorerColLast": {
+    "message": "Last Visit"
+  },
+  "explorerSortUrlLabel": {
+    "message": "Sort URL List"
+  },
+  "explorerBack": {
+    "message": "← Back to Hosts"
+  },
+  "explorerMore": {
+    "message": "Load 100 More"
+  },
+  "explorerNotes": {
+    "message": "Statistics reflect only History entries that still exist. Automatically deleted records are not available. Scan again after cleanup to refresh."
+  },
+  "explorerReady": {
+    "message": "Select Analyze History to scan all stored History."
+  },
+  "explorerScanning": {
+    "message": "Scanning browser History…"
+  },
+  "explorerProgress": {
+    "message": "URLs scanned / queries:"
+  },
+  "explorerCancelled": {
+    "message": "Scan cancelled. Previous results, if any, remain visible."
+  },
+  "explorerDone": {
+    "message": "History scan completed."
+  },
+  "explorerError": {
+    "message": "Unable to complete full History scan:"
+  },
+  "explorerTooLarge": {
+    "message": "History is too large to count completely without risking truncated results. No partial result will be shown."
+  },
+  "explorerSummaryHosts": {
+    "message": "Hosts:"
+  },
+  "explorerSummaryUrls": {
+    "message": "URLs:"
+  },
+  "explorerSummaryVisits": {
+    "message": "Visits:"
+  },
+  "navTitle": {
+    "message": "Sections"
+  },
+  "navToggle": {
+    "message": "Menu"
+  },
+  "navOverview": {
+    "message": "Overview"
+  },
+  "navProtected": {
+    "message": "Protected URLs"
+  },
+  "navHostEntry": {
+    "message": "Host Entry Rules"
+  },
+  "navNoHistory": {
+    "message": "No History"
+  },
+  "navExplorer": {
+    "message": "History Explorer"
+  },
+  "navBackup": {
+    "message": "Export / Import"
+  },
+  "navCleanup": {
+    "message": "Clean Now"
+  },
+  "explorerMinUrlsLabel": {
+    "message": "Minimum URL Count"
+  },
+  "explorerMinUrlsHelp": {
+    "message": "Hide hosts with fewer distinct URLs than this value. Filtering affects the list only; it never deletes History."
+  },
+  "explorerNoHosts": {
+    "message": "No hosts match the current filters."
+  },
+  "navStatistics": {
+    "message": "Statistics"
+  },
+  "statsTitle": {
+    "message": "Daily History Deletions"
+  },
+  "statsRefresh": {
+    "message": "Refresh"
+  },
+  "statsDescription": {
+    "message": "Daily totals for successfully completed automatic and Clean Now deletion calls."
+  },
+  "statsTodayAuto": {
+    "message": "Auto Deleted Today"
+  },
+  "statsSevenAuto": {
+    "message": "Auto Deleted — Last 7 Days"
+  },
+  "statsThirtyAuto": {
+    "message": "Auto Deleted — Last 30 Days"
+  },
+  "statsThirtyManual": {
+    "message": "Clean Now — Last 30 Days"
+  },
+  "statsDailyHeading": {
+    "message": "Daily totals — last 30 days"
+  },
+  "statsDateCol": {
+    "message": "Local date"
+  },
+  "statsAutoCol": {
+    "message": "Auto Deleted"
+  },
+  "statsManualCol": {
+    "message": "Clean Now"
+  },
+  "statsNotes": {
+    "message": "Counts represent completed URL deletion calls, not visits or necessarily unique URLs. Repeated calls on the same URL may be counted again. Dates use the local calendar day when deleted. Only date/count aggregates are stored; earlier deletions cannot be reconstructed."
+  },
+  "statsLoading": {
+    "message": "Loading statistics…"
+  },
+  "statsError": {
+    "message": "Unable to load statistics."
+  },
+  "fullBackupTitle": {
+    "message": "Full Backup — Rules and Daily Statistics"
+  },
+  "fullBackupDescription": {
+    "message": "Use Full Backup before replacing a temporary debugging add-on with a signed AMO installation. The local JSON file includes private saved URLs and daily deletion counts. Keep it secure. Restoring replaces all rules and daily statistics, but does not run Clean Now."
+  },
+  "fullBackupExport": {
+    "message": "Export Full Backup"
+  },
+  "fullBackupChoose": {
+    "message": "Select a full backup JSON file"
+  },
+  "fullBackupRestore": {
+    "message": "Restore Full Backup"
+  },
+  "fullBackupExportSuccess": {
+    "message": "Full backup download started. Verify the JSON file before removing the debugging add-on."
+  },
+  "fullBackupExportError": {
+    "message": "Could not export full backup:"
+  },
+  "fullBackupRestoreConfirm": {
+    "message": "Replace ALL rules and daily statistics with this full backup? This cannot be undone. Keep a copy of the current settings first."
+  },
+  "fullBackupRestoreSuccess": {
+    "message": "Full backup restored (Protected / No History / Host Entry / Statistics days):"
+  },
+  "fullBackupRestoreError": {
+    "message": "Could not restore full backup:"
+  },
+  "fullBackupInvalid": {
+    "message": "Invalid full backup file, version, or extension ID. Nothing was restored."
+  },
+  "fullBackupTooLarge": {
+    "message": "The full backup file is too large."
+  }
+}
