@@ -23,9 +23,9 @@ No remote requests are made by the extension. `browser_specific_settings.gecko.d
 
 **Safety limitation:** `history.onVisited` runs after Firefox writes the history entry. This extension deletes matching records after that event rather than preventing a write to storage.
 
-**Migration:** The manifest add-on ID `firefox-minimal-history@local-extension.example` is intentionally unchanged from previous temporary-debug builds to support continuity. A user should still export Full Backup first, because removing a temporary add-on may clear `storage.local`.
+**Migration:** New add-on ID: `{d573c284-f17e-4a66-9834-2cbf0477d960}`. The prior debug ID was `firefox-minimal-history@local-extension.example`. The initial AMO submission was deleted, so AMO requires a new unique ID. This release accepts Full Backup imports from the previous debug ID as well as its own new ID, after format and rule validation. Users must export Full Backup before removing the temporary add-on; separate IDs do not automatically share storage.local.
 
-**Source:** The matching `history-control-source-v1.1.0.zip` includes all runtime files unchanged, plus source-level tests and documentation. Run `node --test tests/*.test.js` using Node.js to execute mock-based tests. No separate build command is needed: the runtime JS/CSS/HTML in the source archive is byte-for-byte the same as the files inside the AMO submission ZIP.
+**Source:** The matching `HistoryControl-Source-NewID-v1.1.0.zip` includes all runtime files unchanged, plus source-level tests and documentation. Run `node --test tests/*.test.js` using Node.js to execute mock-based tests. No separate build command is needed: the runtime JS/CSS/HTML in the source archive is byte-for-byte the same as the files inside the AMO submission ZIP.
 
 ## Extension branding icon
 

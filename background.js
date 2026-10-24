@@ -10,6 +10,7 @@ const HOST_ENTRY_KEY = "hostEntryRules";
 const DAILY_STATS_KEY = "dailyDeletionStatsV1"; // Aggregate counts only; no URLs or hosts.
 const FULL_BACKUP_FORMAT = "history-control-full-backup";
 const FULL_BACKUP_VERSION = 1;
+const LEGACY_FULL_BACKUP_EXTENSION_ID = "firefox-minimal-history@local-extension.example";
 const FULL_BACKUP_MAX_BYTES = 4 * 1024 * 1024;
 
 const MENU_ID = "minimal-history-manage"; // Keep old menu identifier for upgrade.
@@ -647,7 +648,7 @@ function validateFullBackup(payload) {
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) throw new Error(t("fullBackupInvalid"));
   if (JSON.stringify(payload).length > FULL_BACKUP_MAX_BYTES) throw new Error(t("fullBackupTooLarge"));
   if (payload.format !== FULL_BACKUP_FORMAT || payload.formatVersion !== FULL_BACKUP_VERSION ||
-      payload.extensionId !== browser.runtime.id ||
+      ![browser.runtime.id, LEGACY_FULL_BACKUP_EXTENSION_ID].includes(payload.extensionId) ||
       !["protectedSites", "excludedHosts", "hostEntryRules", "dailyDeletionStatsV1"].every(
         (key) => Object.hasOwn(payload, key))) throw new Error(t("fullBackupInvalid"));
   const incoming = strictImportedRules({

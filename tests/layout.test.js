@@ -12,7 +12,7 @@ const responsive = css.slice(css.indexOf("/* v1.0.8:"));
 test("v1.0.9 changes the display version but retains the extension identity", () => {
   assert.equal(manifest.version, "1.1.0");
   assert.equal(manifest.browser_specific_settings.gecko.id,
-    "firefox-minimal-history@local-extension.example");
+    "{d573c284-f17e-4a66-9834-2cbf0477d960}");
 });
 
 test("wide Options content uses full window width and avoids forced row wrapping", () => {

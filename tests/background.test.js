@@ -1364,6 +1364,29 @@ test("v1.1.0 Full Backup restores all rules, stats, and does not delete unrelate
   assert.equal(installed.visits.has("https://unrelated.test/new"), true);
 });
 
+test("v1.1.0 signed add-on accepts original debug Full Backup after ID migration", async () => {
+  const oldDebug = newFirefox([{ id: 1, url: "https://example.org/" }]);
+  await oldDebug.settle();
+  await oldDebug.click();
+  await oldDebug.message({ type: "addExcluded", hostname: "private.test", includeSubdomains: true });
+  await oldDebug.visit("https://example.org/temporary");
+  const backup = JSON.parse(JSON.stringify(await oldDebug.message({ type: "exportFullBackup" })));
+  backup.extensionId = "firefox-minimal-history@local-extension.example";
+
+  // The released extension uses a distinct Gecko ID. A backup from the old
+  // Debug extension still needs to migrate without manually editing JSON.
+  const newSigned = newFirefox([{ id: 2, url: "https://unrelated.test/" }], {});
+  await newSigned.settle();
+  const restored = await newSigned.message({ type: "importFullBackup", payload: backup });
+  assert.equal(restored.protectedCount, 1);
+  assert.equal(restored.exclusionCount, 1);
+  assert.equal(restored.statisticsDays, 1);
+  const exported = await newSigned.message({ type: "exportFullBackup" });
+  assert.deepEqual(JSON.parse(JSON.stringify(exported.protectedSites)), backup.protectedSites);
+  assert.deepEqual(JSON.parse(JSON.stringify(exported.dailyDeletionStatsV1)), backup.dailyDeletionStatsV1);
+  assert.equal(newSigned.visits.has("https://unrelated.test/"), false);
+});
+
 test("v1.1.0 invalid Full Backups cannot alter existing rules or statistics", async () => {
   const f = newFirefox([{ id: 1, url: "https://example.org/" }]);
   await f.settle();

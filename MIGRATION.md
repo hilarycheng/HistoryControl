@@ -7,13 +7,13 @@
 ## 最重要的資料安全原則
 
 - **在完成完整備份前，請勿按 Remove、解除安裝開發版，或清除 Firefox Profile。**
-- 開發版與正式版的 Extension ID 均維持 `firefox-minimal-history@local-extension.example`。這有助 Firefox 識別相同擴充功能，但**不能保證**開發版卸載後仍保留 `storage.local`。
+- 開發版 ID 為 `firefox-minimal-history@local-extension.example`，正式版新 ID 為 `{d573c284-f17e-4a66-9834-2cbf0477d960}`。它們在 Firefox 中是不同的 Extension，**設定不會自動轉移**，但正式版支援讀取舊 ID 的 Full Backup。
 - Firefox 官方文件指出：解除安裝擴充功能時會清除對應的 `storage.local`。因此必須先將資料匯出成檔案。
 - **Rules-only「匯出設定」不包括 Statistics；請使用「匯出完整備份」。**
 
 ## 階段 A：在目前的 Debug Profile 建立完整備份
 
-1. 解壓縮 **History Control v1.1.0** 的 ZIP，將執行檔覆蓋到原來用於 `about:debugging` 的擴充功能資料夾。請勿刪除或重設 Firefox Profile。
+1. 使用 **原 Debug ID（`firefox-minimal-history@local-extension.example`）** 的 History Control v1.1.0 ZIP 更新現有 `about:debugging` 資料夾，**不要使用新 AMO ID 的 ZIP 覆蓋 Debug 版**。請勿刪除或重設 Firefox Profile。
 2. 在 `about:debugging#/runtime/this-firefox` 找到目前載入的 History Control，按 **Reload**。核實顯示版本為 `1.1.0`。
 3. 開啟 **Options → Export / Import → Full Backup**。
 4. 按 **Export Full Backup／匯出完整備份**。
@@ -27,15 +27,15 @@
 
 1. 使用 Mozilla Account 登入 [Firefox Add-ons Developer Hub](https://addons.mozilla.org/developers/)。
 2. 選擇 **Submit a New Add-on**，發佈方式選擇 **On this site（Listed）**，不是 On your own。
-3. 上傳 `history-control-amo-listed-v1.1.0.zip`。ZIP 根目錄直接包含 `manifest.json`，沒有頂層資料夾。
+3. 上傳 `HistoryControl-AMO-Listed-NewID-v1.1.0.zip`。ZIP 根目錄直接包含 `manifest.json`，沒有頂層資料夾。
 4. 填寫公開資訊，可參考本套件的 `AMO_LISTING.md`。授權條款和支援聯絡方式須由發佈者自行決定，不能自動代選。
-5. 本版本沒有壓縮或混淆 JavaScript。若審核流程要求額外提供原始碼，可上傳 `history-control-source-v1.1.0.zip`。
+5. 本版本沒有壓縮或混淆 JavaScript。若審核流程要求額外提供原始碼，可上傳 `HistoryControl-Source-NewID-v1.1.0.zip`。
 6. 提交並處理 AMO 的自動驗證、簽署和可能的人工審核。**未取得簽署前的 ZIP 不是可永久安裝的正式 XPI。**
 
 ## 階段 C：從已簽署的 AMO 安裝
 
 1. **再次確認階段 A 的完整 JSON 備份存在。**
-2. 從正式的 AMO 上架頁面安裝已簽署的 History Control。若 Firefox 表示原開發版與新安裝版本有衝突，必須先確認備份後，才移除 Temporary Add-on。
+2. 從正式的 AMO 上架頁面安裝已簽署的 History Control。新舊 Extension ID 不同，Firefox 將它們視為兩個擴充功能；確認備份後再停用或移除舊 Debug 版，以免兩者同時清理 History。
 3. 在新安裝的 History Control 中開啟 **Options → Export / Import → Full Backup**。
 4. 按 **選擇完整備份 JSON 檔案**，選取階段 A 下載的檔案。
 5. 按 **Restore Full Backup／還原完整備份**，閱讀警告後確認。此操作會取代目前的三類規則及每日統計，但**不會執行 Clean Now**。
@@ -57,7 +57,7 @@
 
 ## 如果資料沒有自動沿用
 
-此情況可能由 Temporary Add-on 解除安裝時清除本機儲存造成。使用新的 **Restore Full Backup** 即可還原擴充功能設定和統計。請勿嘗試透過一般瀏覽器 History 清除來修復此問題。
+由於正式版 ID 已更換，設定不會自動沿用。使用 **Restore Full Backup** 匯入舊 Debug 版完整備份，即可還原設定和統計。請勿嘗試透過一般瀏覽器 History 清除來修復此問題。
 
 ## 與簽署有關的限制
 

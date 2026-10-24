@@ -8,7 +8,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'u
 
 test('extension maintains the existing ID and v1.1.0 version', () => {
   assert.equal(manifest.version, '1.1.0');
-  assert.equal(manifest.browser_specific_settings.gecko.id, 'firefox-minimal-history@local-extension.example');
+  assert.equal(manifest.browser_specific_settings.gecko.id, '{d573c284-f17e-4a66-9834-2cbf0477d960}');
 });
 
 test('48px, 96px and 128px official app icons exist and have correct PNG dimensions', () => {

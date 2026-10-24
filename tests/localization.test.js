@@ -59,7 +59,7 @@ test("v1.1.0 Full Backup UI and Firefox AMO manifest data disclosures are presen
   assert.match(options, /id="full-import-file"/);
   assert.match(js, /type: "exportFullBackup"/);
   assert.match(js, /type: "importFullBackup"/);
-  assert.equal(manifest.browser_specific_settings.gecko.id, "firefox-minimal-history@local-extension.example");
+  assert.equal(manifest.browser_specific_settings.gecko.id, "{d573c284-f17e-4a66-9834-2cbf0477d960}");
   assert.deepEqual(manifest.browser_specific_settings.gecko.data_collection_permissions.required, ["none"]);
   assert.equal(manifest.version, "1.1.0");
 });
